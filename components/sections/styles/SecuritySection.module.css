@@ -1,0 +1,78 @@
+.secSection {
+  @apply py-20 lg:py-28 bg-neutral-950;
+}
+
+.secContainer {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.secHeader {
+  @apply text-center mb-16;
+}
+
+.iconWrap {
+  @apply inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-6;
+  background-color: rgba(201, 168, 76, 0.1);
+}
+
+.secHeading {
+  @apply text-3xl lg:text-5xl font-bold text-white leading-tight;
+}
+
+.secDescription {
+  @apply mt-4 text-lg text-neutral-400 max-w-xl mx-auto leading-relaxed;
+}
+
+.certGrid {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6;
+}
+
+.certCard {
+  @apply bg-neutral-900 border border-neutral-800 rounded-2xl p-6 transition-all duration-300;
+}
+
+.certCard:hover {
+  background-color: rgba(38, 38, 38, 0.5);
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.certIconWrap {
+  @apply text-neutral-400 transition-colors duration-300 mb-4;
+}
+
+.certCard:hover .certIconWrap {
+  @apply text-brand-gold;
+}
+
+.certName {
+  @apply text-base font-bold text-white mb-1;
+}
+
+.certDesc {
+  @apply text-xs text-neutral-500 leading-relaxed;
+}
+
+.bottomPanel {
+  @apply mt-12 p-6 lg:p-8 bg-neutral-900 border border-neutral-800 rounded-3xl;
+}
+
+.bottomPanelGrid {
+  @apply grid md:grid-cols-3 gap-6;
+}
+
+.bottomPanelItem {
+  @apply flex items-start gap-4;
+}
+
+.bottomIconWrap {
+  @apply w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 text-brand-gold;
+  background-color: rgba(201, 168, 76, 0.1);
+}
+
+.bottomTitle {
+  @apply text-sm font-semibold text-white mb-1;
+}
+
+.bottomDesc {
+  @apply text-xs text-neutral-500 leading-relaxed;
+}

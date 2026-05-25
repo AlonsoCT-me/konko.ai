@@ -1,0 +1,43 @@
+.metricsSection {
+  @apply py-20 lg:py-28 bg-white;
+}
+
+.metricsContainer {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.metricsGrid {
+  @apply grid lg:grid-cols-2 gap-12 items-center;
+}
+
+.heroValue {
+  @apply text-6xl lg:text-8xl font-bold text-neutral-950 leading-none;
+}
+
+.heroLabel {
+  @apply mt-3 text-lg text-neutral-500;
+}
+
+.statsGrid {
+  @apply grid grid-cols-2 gap-x-8 gap-y-8;
+}
+
+.statDivider {
+  @apply h-px bg-neutral-200 mb-4;
+}
+
+.statValue {
+  @apply text-3xl lg:text-4xl font-bold text-neutral-950;
+}
+
+.statLabel {
+  @apply text-sm text-neutral-500 mt-1 leading-relaxed;
+}
+
+.progressWrap {
+  @apply mt-20 relative overflow-hidden rounded-3xl h-2 bg-neutral-100;
+}
+
+.progressBar {
+  @apply absolute inset-y-0 left-0 bg-gradient-to-r from-brand-gold to-brand-gold-light rounded-full;
+}

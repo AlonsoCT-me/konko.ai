@@ -1,0 +1,64 @@
+.revSection {
+  @apply py-20 lg:py-28 bg-brand-off-white;
+}
+
+.revContainer {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.revHeader {
+  @apply text-center mb-16;
+}
+
+.revHeading {
+  @apply text-3xl lg:text-5xl font-bold text-neutral-950 leading-tight;
+}
+
+.subheading {
+  @apply mt-4 text-lg text-neutral-500;
+}
+
+.revGrid {
+  @apply grid md:grid-cols-3 gap-6;
+}
+
+.revCard {
+  @apply bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-lg transition-shadow duration-300;
+}
+
+.cardImage {
+  @apply relative h-52 overflow-hidden;
+}
+
+.cardImageOverlay {
+  @apply absolute inset-0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.cardBody {
+  @apply p-6;
+}
+
+.quoteIcon {
+  @apply w-8 h-8 text-brand-gold mb-4;
+}
+
+.quote {
+  @apply text-sm text-neutral-600 leading-relaxed mb-5;
+}
+
+.authorRow {
+  @apply flex items-center gap-3;
+}
+
+.authorAvatar {
+  @apply relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0;
+}
+
+.authorName {
+  @apply text-sm font-semibold text-neutral-900;
+}
+
+.authorRole {
+  @apply text-xs text-neutral-500;
+}

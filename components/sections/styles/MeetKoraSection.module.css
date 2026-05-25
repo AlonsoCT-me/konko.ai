@@ -1,0 +1,39 @@
+.meetSection {
+  @apply py-20 lg:py-28 bg-white;
+}
+
+.meetContainer {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.meetHeader {
+  @apply mb-16;
+}
+
+.meetHeading {
+  @apply text-3xl lg:text-5xl font-bold text-neutral-950 leading-tight;
+}
+
+.meetDescription {
+  @apply mt-4 text-lg text-neutral-500 max-w-xl;
+}
+
+.cta {
+  @apply mt-6 inline-flex items-center gap-2 text-sm font-semibold text-neutral-950 hover:text-brand-gold transition-colors;
+}
+
+.ctaIcon {
+  @apply w-4 h-4 transition-transform;
+}
+
+.cta:hover .ctaIcon {
+  transform: translateX(0.25rem);
+}
+
+.meetGrid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.imageWrap {
+  @apply mt-6 relative h-48 rounded-2xl overflow-hidden;
+}

@@ -1,0 +1,60 @@
+.navHeader {
+  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+}
+
+.headerScrolled {
+  @apply backdrop-blur-md border-b border-neutral-100 shadow-card-sm;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.headerTransparent {
+  @apply bg-transparent;
+}
+
+.navContainer {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.nav {
+  @apply flex items-center justify-between h-16 lg:h-18;
+}
+
+.desktopLinks {
+  @apply hidden lg:flex items-center gap-1;
+}
+
+.navLink {
+  @apply px-4 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-950 transition-colors rounded-full hover:bg-neutral-100;
+}
+
+.desktopActions {
+  @apply hidden lg:flex items-center gap-3;
+}
+
+.loginLink {
+  @apply text-sm font-medium text-neutral-600 hover:text-neutral-950 transition-colors;
+}
+
+.mobileToggle {
+  @apply lg:hidden p-2 rounded-lg hover:bg-neutral-100 transition-colors;
+}
+
+.mobileMenu {
+  @apply lg:hidden bg-white border-t border-neutral-100;
+}
+
+.mobileMenuInner {
+  @apply max-w-7xl mx-auto px-4 py-4 space-y-1;
+}
+
+.mobileLink {
+  @apply block px-4 py-3 text-sm font-medium text-neutral-700 hover:text-neutral-950 hover:bg-neutral-50 rounded-xl transition-colors;
+}
+
+.mobileLangRow {
+  @apply pt-2 pb-1;
+}
+
+.mobileCtas {
+  @apply pt-3 pb-1 flex flex-col gap-3;
+}

@@ -1,0 +1,279 @@
+{
+  "navbar": {
+    "links": {
+      "features": "Features",
+      "security": "Security",
+      "about": "About Us",
+      "blog": "Blog"
+    },
+    "ariaLabel": "Konko.ai - Home",
+    "login": "Log in",
+    "cta": "Schedule Demo",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu"
+  },
+  "footer": {
+    "tagline": "The AI assistant that transforms patient care in clinics across Latin America.",
+    "columns": {
+      "product": {
+        "heading": "Product",
+        "links": {
+          "features": "Features",
+          "security": "Security",
+          "specialties": "Specialties",
+          "pricing": "Pricing"
+        }
+      },
+      "company": {
+        "heading": "Company",
+        "links": {
+          "about": "About Us",
+          "blog": "Blog",
+          "careers": "Careers",
+          "press": "Press"
+        }
+      },
+      "legal": {
+        "heading": "Legal",
+        "links": {
+          "privacy": "Privacy",
+          "terms": "Terms",
+          "cookies": "Cookies"
+        }
+      }
+    },
+    "social": {
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "twitter": "X (Twitter)"
+    },
+    "copyright": "© {year} Konko.ai. All rights reserved.",
+    "bottomTagline": "Building the future of healthcare in Latam"
+  },
+  "hero": {
+    "badge": "AI for clinics in Latam",
+    "heading": {
+      "line1": "More appointments",
+      "line2": "Better care",
+      "line3": "Less",
+      "line4": "operational load"
+    },
+    "description": "Meet Kora and Nora, AI assistants that have handled over 127 conversations in clinics and seek the most advanced cases on the planet.",
+    "cta": {
+      "demo": "Schedule Demo",
+      "try": "Try Kora"
+    },
+    "socialProof": "+120,000 consultations handled",
+    "floatingCard": {
+      "left": {
+        "title": "Appointment confirmed",
+        "subtitle": "Dr. García · 10:30 AM"
+      },
+      "right": {
+        "title": "Kora responded",
+        "subtitle": "30 sec average"
+      }
+    }
+  },
+  "aiLatam": {
+    "badge": "AI for clinics in Latam",
+    "heading": "We process millions of conversations to understand clinical complexity",
+    "description": "Culturally sensitive cases and scale and volume of care. Kora understands the Latin American medical context like no other AI.",
+    "stats": {
+      "specialties": { "value": "127+", "label": "Medical specialties" },
+      "satisfaction": { "value": "98%", "label": "Satisfaction rate" },
+      "conversations": { "value": "2M+", "label": "Conversations processed" },
+      "responseTime": { "value": "30 sec", "label": "Response time" }
+    },
+    "imageSection": {
+      "label": "Latam",
+      "sublabel": "Our region"
+    },
+    "locationCard": {
+      "available": "Available in",
+      "countries": "15 countries in Latam"
+    }
+  },
+  "cta": {
+    "eyebrow": "Building the future",
+    "heading": {
+      "line1": "Building the future",
+      "line2": "of healthcare in Latam"
+    },
+    "description": "Join hundreds of clinics already transforming their patients' experience with Konko.",
+    "buttons": {
+      "demo": "Schedule Demo",
+      "free": "Try for free"
+    }
+  },
+  "founder": {
+    "eyebrow": "Made with love",
+    "heading": "Made with love",
+    "body1": "At Konko.ai we won't sacrifice your nights and entire weekends trying to make your clinic run better.",
+    "body2": "Our mission is to give back time and simplicity to every clinic, so you can focus on what matters most.",
+    "author": {
+      "name": "Juan Marc Guglielmi",
+      "role": "Co-founder & CEO, Konko.ai"
+    },
+    "floatingCard": {
+      "year": "2019",
+      "label": "Founded in Costa Rica"
+    },
+    "imageAlts": {
+      "team": "Konko team",
+      "working": "Konko team working"
+    }
+  },
+  "meetKora": {
+    "heading": "Meet Kora",
+    "description": "The new AI assistant that will help you transform your clinic with technology from the best in the world.",
+    "cta": "Try Kora",
+    "features": {
+      "scheduling": {
+        "tag": "Scheduling",
+        "title": "Convert more messages into scheduled appointments",
+        "description": "Don't lose patients by not responding in time. Kora replies instantly on WhatsApp and automatically schedules appointments."
+      },
+      "loyalty": {
+        "tag": "Loyalty",
+        "title": "Build patient loyalty with the best care",
+        "description": "Kora remembers every detail, sends personalized reminders, and follows up post-consultation automatically."
+      },
+      "efficiency": {
+        "tag": "Efficiency",
+        "title": "Free your team from operational chaos",
+        "description": "Your staff stops answering repetitive WhatsApps and focuses on what matters most: the patient in front of them."
+      },
+      "analytics": {
+        "tag": "Analytics",
+        "title": "Gain full visibility and control",
+        "description": "Real-time dashboard of all your consultations and conversations. Make better decisions every day."
+      },
+      "implementation": {
+        "tag": "Implementation",
+        "title": "Ready in days and improving every day",
+        "description": "Onboarding in less than 48 hours. Kora learns about your clinic and continuously improves with each conversation."
+      }
+    }
+  },
+  "metaPartner": {
+    "logoText": "Meta",
+    "badgeTagline": "Business Partner",
+    "eyebrow": "Official Partner",
+    "heading": "We are official Meta partners",
+    "description": "We use the official WhatsApp Business API infrastructure to guarantee speed, stability, and a reliable experience for every patient.",
+    "checkItems": {
+      "api": "Official API",
+      "uptime": "99.9% Uptime",
+      "noBan": "No number bans"
+    }
+  },
+  "metrics": {
+    "heroValue": "2,000,000",
+    "heroLabel": "messages processed per month across the entire Konko platform",
+    "stats": {
+      "consultations": { "value": "120,000+", "label": "Consultations handled" },
+      "responseTime": { "value": "30 sec", "label": "Average response time" },
+      "satisfaction": { "value": "99.9%", "label": "Reported satisfaction" },
+      "nps": { "value": "9/10", "label": "Patient NPS" }
+    }
+  },
+  "revolution": {
+    "heading": "The healthcare revolution in Latam",
+    "subheading": "Told by its true protagonists",
+    "testimonials": [
+      {
+        "quote": "Kora completely transformed appointment management at our clinic. We reduced cancellations by 60% in the first month.",
+        "name": "Dr. Carlos Méndez",
+        "role": "Medical Director",
+        "clinic": "Clínica Urología Avanzada"
+      },
+      {
+        "quote": "The team can focus on patients instead of answering WhatsApps all day. Productivity increased incredibly.",
+        "name": "Dra. María Torres",
+        "role": "Founder",
+        "clinic": "ÉticaOral"
+      },
+      {
+        "quote": "Konko's AI understands the medical context in a way other platforms simply can't. It's like having an expert receptionist 24/7.",
+        "name": "Dr. Juan Echandi",
+        "role": "Director",
+        "clinic": "Lab Echandi"
+      }
+    ]
+  },
+  "security": {
+    "heading": "Security in every conversation",
+    "description": "Your patients' information is protected with the highest industry security standards.",
+    "certifications": {
+      "soc2": { "name": "SOC 2", "description": "Security and availability audit" },
+      "gdpr": { "name": "GDPR", "description": "European data protection compliance" },
+      "iso": { "name": "ISO 27001", "description": "Information security management" },
+      "liveness": { "name": "Liveness", "description": "Real-time identity verification" },
+      "hl7": { "name": "HL7", "description": "Health interoperability standards" },
+      "fhir": { "name": "HL7 FHIR", "description": "Modern medical data interoperability" }
+    },
+    "bottomItems": {
+      "encryption": {
+        "title": "End-to-end encryption",
+        "description": "All conversations are encrypted with AES-256."
+      },
+      "noRetention": {
+        "title": "No data retention",
+        "description": "Medical data is never used to train models."
+      },
+      "audits": {
+        "title": "Regular audits",
+        "description": "Quarterly pentesting by independent firms."
+      }
+    }
+  },
+  "specialties": {
+    "heading": "Designed for your specialty",
+    "description": "Kora adapts and understands the patients of each type of clinic. From dentistry to cardiology, Kora speaks your specialty's language.",
+    "countBadge": "+127 specialties available",
+    "list": {
+      "dentistry": "Dentistry",
+      "gastroenterology": "Gastroenterology",
+      "urology": "Urology",
+      "cardiology": "Cardiology",
+      "pediatrics": "Pediatrics",
+      "dermatology": "Dermatology",
+      "ophthalmology": "Ophthalmology",
+      "orthopedics": "Orthopedics"
+    }
+  },
+  "talkToKora": {
+    "badge": "Native WhatsApp",
+    "heading": {
+      "line1": "Talk to Kora!",
+      "line2": "A clinical assistant you could offer your patients"
+    },
+    "description": "Kora responds 24/7 on WhatsApp, understands medical context, and schedules appointments like your best receptionist — but without interruptions and without errors.",
+    "cta": "Try Kora now",
+    "chat": {
+      "phoneHeader": "Kora · Clínica García",
+      "online": "online",
+      "inputPlaceholder": "Write a message...",
+      "typing": "Kora is typing...",
+      "whatsappBadge": "WhatsApp",
+      "messages": {
+        "user1": "Hi, I want to schedule an appointment with Dr. García",
+        "kora1": "Hello! Sure, I can help you. What is your availability this week?",
+        "user2": "Tuesday or Wednesday afternoon",
+        "kora2": "Perfect! I have Tuesday the 14th at 3:30 PM or Wednesday the 15th at 4:00 PM available. Which do you prefer?"
+      }
+    }
+  },
+  "trustedBy": {
+    "label": "Hundreds of clinics already trust us",
+    "clinics": {
+      "eticaOral": { "name": "ÉticaOral", "tagline": "Dentistry with responsibility" },
+      "labEchandi": { "name": "Lab Echandi" },
+      "urologiaAvanzada": { "name": "Urología Avanzada", "tagline": "Dr. Mario González" },
+      "teraMed": { "name": "TeraMed" },
+      "clinicaDentalPlus": { "name": "Clínica Dental Plus" },
+      "medCare": { "name": "MedCare" }
+    }
+  }
+}

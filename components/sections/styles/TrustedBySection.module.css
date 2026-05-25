@@ -1,0 +1,39 @@
+.trustedSection {
+  @apply bg-white border-y border-neutral-100 py-10 overflow-hidden;
+}
+
+.trustedContainer {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.trustedLabel {
+  @apply text-center text-sm text-neutral-400 font-medium mb-8;
+}
+
+.trustedTrack {
+  @apply relative;
+}
+
+.marquee {
+  @apply flex animate-marquee gap-16 items-center w-max;
+}
+
+.trustedItem {
+  @apply flex flex-col items-center gap-0.5 flex-shrink-0;
+}
+
+.itemName {
+  @apply text-base font-bold text-neutral-700 whitespace-nowrap;
+}
+
+.itemTagline {
+  @apply text-2xs text-neutral-400 whitespace-nowrap;
+}
+
+.fadeLeft {
+  @apply absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent pointer-events-none;
+}
+
+.fadeRight {
+  @apply absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent pointer-events-none;
+}

@@ -1,0 +1,44 @@
+.specSection {
+  @apply py-20 lg:py-28 bg-brand-off-white overflow-hidden;
+}
+
+.specContainer {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.specHeader {
+  @apply grid lg:grid-cols-2 gap-12 items-center mb-16;
+}
+
+.specHeading {
+  @apply text-3xl lg:text-5xl font-bold text-neutral-950 leading-tight;
+}
+
+.specDescription {
+  @apply mt-4 text-lg text-neutral-500 leading-relaxed;
+}
+
+.count {
+  @apply text-sm font-medium text-neutral-400 text-right hidden lg:block;
+}
+
+.specGrid {
+  @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4;
+}
+
+.specCard {
+  @apply relative rounded-2xl overflow-hidden h-48 cursor-pointer;
+}
+
+.cardOverlay {
+  @apply absolute inset-0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1), transparent);
+}
+
+.cardLabel {
+  @apply absolute bottom-0 left-0 right-0 p-4;
+}
+
+.cardLabelText {
+  @apply text-sm font-semibold text-white;
+}
