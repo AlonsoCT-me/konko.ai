@@ -1,0 +1,53 @@
+.section {
+  @apply py-20 lg:py-28 bg-white;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.twoCol {
+  @apply grid lg:grid-cols-2 gap-16 lg:gap-24 items-center;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium text-brand-gold-dark mb-6;
+  background-color: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.heading {
+  @apply text-3xl lg:text-4xl font-bold text-neutral-950 leading-tight mb-6;
+}
+
+.description {
+  @apply text-base lg:text-lg text-neutral-500 leading-relaxed mb-10;
+}
+
+.cta {
+  @apply inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neutral-950 text-white text-sm font-semibold hover:bg-neutral-800 transition-colors;
+}
+
+.pillars {
+  @apply space-y-4;
+}
+
+.pillar {
+  @apply p-6 rounded-2xl border border-neutral-100 bg-neutral-50 hover:border-brand-gold/20 hover:bg-brand-off-white transition-all duration-300;
+}
+
+.pillarHeader {
+  @apply flex items-center gap-3 mb-2;
+}
+
+.pillarIcon {
+  @apply w-8 h-8 rounded-lg bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0;
+}
+
+.pillarTitle {
+  @apply text-sm font-semibold text-neutral-900;
+}
+
+.pillarDesc {
+  @apply text-sm text-neutral-500 leading-relaxed;
+}

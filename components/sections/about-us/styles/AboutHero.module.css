@@ -1,0 +1,71 @@
+.section {
+  @apply relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28;
+  background: linear-gradient(160deg, #F9F7F3 0%, #FFFFFF 60%);
+}
+
+.bgOrb {
+  @apply absolute top-0 right-0 w-[700px] h-[700px] pointer-events-none opacity-20;
+  background: radial-gradient(circle at 70% 30%, #C9A84C 0%, transparent 60%);
+}
+
+.bgLines {
+  @apply absolute inset-0 pointer-events-none opacity-[0.04];
+  background-image:
+    linear-gradient(#0A0A0A 1px, transparent 1px),
+    linear-gradient(90deg, #0A0A0A 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.container {
+  @apply relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.inner {
+  @apply max-w-4xl mx-auto text-center;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium text-brand-gold-dark mb-8;
+  background-color: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.eyebrowDot {
+  @apply w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse-slow;
+}
+
+.heading {
+  @apply text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-neutral-950 mb-8;
+}
+
+.headingGold {
+  @apply not-italic;
+  background: linear-gradient(135deg, #C9A84C 0%, #E8D5A0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.headingMuted {
+  @apply text-neutral-400;
+}
+
+.description {
+  @apply text-lg lg:text-xl text-neutral-500 leading-relaxed max-w-2xl mx-auto mb-10;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-neutral-600 bg-white shadow-card border border-neutral-100;
+}
+
+.badgeIcon {
+  @apply w-4 h-4 text-brand-gold;
+}
+
+.scrollIndicator {
+  @apply mt-16 flex flex-col items-center gap-2 text-neutral-400 text-xs;
+}
+
+.scrollLine {
+  @apply w-px h-12 bg-gradient-to-b from-neutral-300 to-transparent;
+}

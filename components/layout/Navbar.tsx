@@ -19,7 +19,7 @@ export function Navbar() {
   const navLinks = [
     { label: nav.links.features, href: '#caracteristicas' },
     { label: nav.links.security, href: '#seguridad' },
-    { label: nav.links.about, href: '#nosotros' },
+    { label: nav.links.about, href: '/about-us' },
     { label: nav.links.blog, href: '/blog' },
   ];
 

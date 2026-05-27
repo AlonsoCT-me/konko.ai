@@ -23,7 +23,7 @@ export function Footer() {
       { label: section.columns.product.links.pricing, href: '#precios' },
     ],
     company: [
-      { label: section.columns.company.links.about, href: '#nosotros' },
+      { label: section.columns.company.links.about, href: '/about-us' },
       { label: section.columns.company.links.blog, href: '/blog' },
       { label: section.columns.company.links.careers, href: '/careers' },
       { label: section.columns.company.links.press, href: '/press' },

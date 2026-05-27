@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "About Us — Konko.ai",
+    "description": "Meet the team behind Konko.ai, the AI platform transforming patient care in clinics across Latin America."
+  },
+  "hero": {
+    "eyebrow": "Our story",
+    "heading": {
+      "line1": "Automate.",
+      "line2": "Simplify.",
+      "line3": "Elevate human potential."
+    },
+    "description": "Konko.ai develops autonomous digital workers for medical clinics in Latin America. Our mission is to give healthcare teams back their time so they can focus on what matters most: the patient.",
+    "badge": "Founded in 2019 · Costa Rica"
+  },
+  "mission": {
+    "eyebrow": "Our mission",
+    "heading": "We don't digitize chaos. We solve it.",
+    "body1": "Traditional medical software only converted paper bureaucracy into digital bureaucracy — without solving the underlying problems. You fill out forms on a screen instead of on paper. The process remains just as inefficient.",
+    "body2": "At Konko.ai we build AI that amplifies clinical staff capabilities rather than replacing them. Every tool we create is designed to eliminate systemic friction and give back time to the people who save lives.",
+    "stats": [
+      { "value": "2M+", "label": "Conversations processed" },
+      { "value": "15", "label": "Countries in Latam" },
+      { "value": "127+", "label": "Medical specialties" },
+      { "value": "2019", "label": "Year founded" }
+    ]
+  },
+  "values": {
+    "eyebrow": "What drives us",
+    "heading": "Our values",
+    "list": [
+      {
+        "title": "Intelligence with purpose",
+        "description": "We build AI that solves real problems, not technology for the sake of innovating. Every feature exists to reduce friction in the healthcare system."
+      },
+      {
+        "title": "Extraordinary standards",
+        "description": "We measure success by real impact on patients and clinics. Mediocre work has no place here — we aspire to excellence in everything we build."
+      },
+      {
+        "title": "Creative and courageous minds",
+        "description": "We seek people who think differently, challenge assumptions, and have the courage to propose solutions no one else would consider."
+      },
+      {
+        "title": "Systemic impact",
+        "description": "No patches. Structural solutions. We think about root problems and build tools that generate lasting change in how healthcare works in Latam."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "The team",
+    "heading": "The people behind Konko",
+    "description": "A world-class multidisciplinary team with experience in AI, healthcare, business, and technology.",
+    "founders": {
+      "label": "Co-founders",
+      "members": [
+        {
+          "name": "Jean Marc Goguikian",
+          "role": "CEO & Co-Founder",
+          "bio": "Medical clinic owner with experience at BCG, JP Morgan, and Harvard Business School. Built Konko from the frustration of running his own clinic.",
+          "image": "https://images.pexels.com/photos/5207088/pexels-photo-5207088.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "linkedin": "#"
+        },
+        {
+          "name": "Michael Haddad",
+          "role": "CTO & Co-Founder",
+          "bio": "AI/ML expert with experience at C3 AI, Tesla, and Harvard Business School. Leads the technical architecture of all Konko products.",
+          "image": "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "linkedin": "#"
+        }
+      ]
+    },
+    "technical": {
+      "label": "Technical leads",
+      "members": [
+        {
+          "name": "Oleksandr Danshyn",
+          "role": "AI/ML Engineer",
+          "bio": "AI/ML systems engineer. Experience at DataRobot and neu.ro.",
+          "image": "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "linkedin": "#"
+        },
+        {
+          "name": "Oscar Argueta",
+          "role": "AI/ML Expert",
+          "bio": "AI/ML expert. Georgia Tech graduate.",
+          "image": "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "linkedin": "#"
+        },
+        {
+          "name": "Ivan Zubenko",
+          "role": "AI/ML Systems Engineer",
+          "bio": "AI/ML systems engineer with experience at neu.ro.",
+          "image": "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "linkedin": "#"
+        }
+      ]
+    }
+  },
+  "culture": {
+    "eyebrow": "Culture",
+    "heading": "Work with us",
+    "description": "We seek creative, intelligent minds passionate about building solutions that users genuinely value. If you're driven by high-impact work and refuse to settle for ordinary, you belong here.",
+    "pillars": [
+      {
+        "title": "High performance",
+        "description": "Rewards are performance-based. Every team member has autonomy and ownership over their impact."
+      },
+      {
+        "title": "Systemic problem-solving",
+        "description": "We don't do routine work for the sake of it. We question every process and find the smartest solution."
+      },
+      {
+        "title": "Elevated standards",
+        "description": "Work that doesn't meet our standards doesn't ship. Quality is non-negotiable."
+      }
+    ],
+    "cta": "See open positions"
+  },
+  "certifications": {
+    "eyebrow": "Certifications",
+    "heading": "Enterprise-grade security",
+    "description": "The trust of our clients and their patients is our greatest responsibility.",
+    "badge": "SOC II Certified",
+    "badgeDescription": "Audited and certified under the highest industry standards for security and availability."
+  },
+  "cta": {
+    "heading": "Ready to transform your clinic?",
+    "description": "Join hundreds of clinics already using Konko to automate their operations and improve patient experience.",
+    "primaryBtn": "Schedule Demo",
+    "secondaryBtn": "Explore the product"
+  }
+}
