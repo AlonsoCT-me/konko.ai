@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Logo } from "@/components/shared/Logo";
-import { Button } from "@/components/ui/button";
-import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
-import { useLocale } from "@/lib/locale-context";
-import s from "./styles/Navbar.module.css";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Logo } from '@/components/shared/Logo';
+import { Button } from '@/components/ui/button';
+import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
+import { useLocale } from '@/lib/locale-context';
+import s from './styles/Navbar.module.css';
 
 export function Navbar() {
   const { t } = useLocale();
@@ -17,25 +17,20 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: nav.links.features, href: "#caracteristicas" },
-    { label: nav.links.security, href: "#seguridad" },
-    { label: nav.links.about, href: "/about-us" },
-    { label: nav.links.blog, href: "/blog" },
+    { label: nav.links.features, href: '#caracteristicas' },
+    { label: nav.links.security, href: '#seguridad' },
+    { label: nav.links.about, href: '/about-us' },
+    { label: nav.links.blog, href: '/blog' },
   ];
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 16);
-    window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
+    window.addEventListener('scroll', handler, { passive: true });
+    return () => window.removeEventListener('scroll', handler);
   }, []);
 
   return (
-    <header
-      className={cn(
-        s.navHeader,
-        scrolled ? s.headerScrolled : s.headerTransparent,
-      )}
-    >
+    <header className={cn(s.navHeader, scrolled ? s.headerScrolled : s.headerTransparent)}>
       <div className={s.navContainer}>
         <nav className={s.nav}>
           <Link href="/" aria-label={nav.ariaLabel}>
@@ -67,11 +62,7 @@ export function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? nav.closeMenu : nav.openMenu}
           >
-            {mobileOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </nav>
       </div>

@@ -1,15 +1,15 @@
-import { HeroSection } from '@/components/sections/home/HeroSection';
-import { TrustedBySection } from '@/components/sections/home/TrustedBySection';
-import { MeetKoraSection } from '@/components/sections/home/MeetKoraSection';
-import { AILatamSection } from '@/components/sections/home/AILatamSection';
-import { RevolutionSection } from '@/components/sections/home/RevolutionSection';
-import { TalkToKoraSection } from '@/components/sections/home/TalkToKoraSection';
-import { SpecialtiesSection } from '@/components/sections/home/SpecialtiesSection';
-import { SecuritySection } from '@/components/sections/home/SecuritySection';
-import { MetaPartnerSection } from '@/components/sections/home/MetaPartnerSection';
-import { FounderSection } from '@/components/sections/home/FounderSection';
-import { MetricsSection } from '@/components/sections/home/MetricsSection';
-import { CTASection } from '@/components/sections/home/CTASection';
+import { HeroSection } from '@/components/sections/HeroSection';
+import { TrustedBySection } from '@/components/sections/TrustedBySection';
+import { MeetKoraSection } from '@/components/sections/MeetKoraSection';
+import { AILatamSection } from '@/components/sections/AILatamSection';
+import { RevolutionSection } from '@/components/sections/RevolutionSection';
+import { TalkToKoraSection } from '@/components/sections/TalkToKoraSection';
+import { SpecialtiesSection } from '@/components/sections/SpecialtiesSection';
+import { SecuritySection } from '@/components/sections/SecuritySection';
+import { MetaPartnerSection } from '@/components/sections/MetaPartnerSection';
+import { FounderSection } from '@/components/sections/FounderSection';
+import { MetricsSection } from '@/components/sections/MetricsSection';
+import { CTASection } from '@/components/sections/CTASection';
 
 export default function HomePage() {
   return (
