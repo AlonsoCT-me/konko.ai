@@ -5,6 +5,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ClientProviders } from "@/components/layout/ClientProviders";
 
+import { BodyClassManager } from "@/components/layout/BodyClassManager";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -110,6 +112,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased`}>
+        <BodyClassManager />
         <ClientProviders>
           <Navbar />
           <main id="main-content">{children}</main>

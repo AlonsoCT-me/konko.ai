@@ -35,6 +35,10 @@
   @apply text-sm font-medium text-neutral-600 hover:text-neutral-950 transition-colors;
 }
 
+.logoWhite {
+  filter: brightness(0) invert(1);
+}
+
 .mobileToggle {
   @apply lg:hidden p-2 rounded-lg hover:bg-neutral-100 transition-colors;
 }

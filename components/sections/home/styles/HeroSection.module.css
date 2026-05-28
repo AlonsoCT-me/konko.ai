@@ -26,7 +26,7 @@
   @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium text-brand-gold-dark mb-6;
   background-color: rgba(201, 168, 76, 0.1);
   border: 1px solid rgba(201, 168, 76, 0.2);
-  background-color: green;
+  background-color: red;
 }
 
 .badgeDot {
