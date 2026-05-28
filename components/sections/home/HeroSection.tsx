@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useLocale } from '@/lib/locale-context';
-import s from './styles/HeroSection.module.css';
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useLocale } from "@/lib/locale-context";
+import s from "./styles/HeroSection.module.css";
 
 const avatarImages = [
-  'https://images.pexels.com/photos/5214949/pexels-photo-5214949.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&dpr=2',
-  'https://images.pexels.com/photos/5207088/pexels-photo-5207088.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&dpr=2',
-  'https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&dpr=2',
-  'https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&dpr=2',
+  "https://images.pexels.com/photos/5214949/pexels-photo-5214949.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&dpr=2",
+  "https://images.pexels.com/photos/5207088/pexels-photo-5207088.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&dpr=2",
+  "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&dpr=2",
+  "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&dpr=2",
 ];
 
 export function HeroSection() {
@@ -22,9 +22,21 @@ export function HeroSection() {
     <section className={s.heroSection}>
       <div className={s.bgDecor} aria-hidden="true">
         <div className={s.bgDecorInner}>
-          <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            viewBox="0 0 600 600"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             {Array.from({ length: 18 }).map((_, i) => (
-              <circle key={i} cx={300 + i * 3} cy={300} r={40 + i * 18} stroke="#C9A84C" strokeWidth="0.5" opacity={1 - i * 0.05} />
+              <circle
+                key={i}
+                cx={300 + i * 3}
+                cy={300}
+                r={40 + i * 18}
+                stroke="#C9A84C"
+                strokeWidth="0.5"
+                opacity={1 - i * 0.05}
+              />
             ))}
           </svg>
         </div>
@@ -69,7 +81,13 @@ export function HeroSection() {
               <div className={s.avatarStack}>
                 {avatarImages.map((src, i) => (
                   <div key={i} className={s.avatar}>
-                    <Image src={src} alt="Doctor" width={32} height={32} className="w-full h-full object-cover" />
+                    <Image
+                      src={src}
+                      alt="Doctor"
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 ))}
               </div>
@@ -102,22 +120,42 @@ export function HeroSection() {
 
               <div className={s.floatingCardLeft}>
                 <div className={s.floatingCardLeftIcon}>
-                  <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <svg
+                    className="w-4 h-4 text-green-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
                 <div>
-                  <p className={s.floatingCardLeftTitle}>{hero.floatingCard.left.title}</p>
-                  <p className={s.floatingCardLeftSub}>{hero.floatingCard.left.subtitle}</p>
+                  <p className={s.floatingCardLeftTitle}>
+                    {hero.floatingCard.left.title}
+                  </p>
+                  <p className={s.floatingCardLeftSub}>
+                    {hero.floatingCard.left.subtitle}
+                  </p>
                 </div>
               </div>
 
               <div className={s.floatingCardRight}>
-                <p className={s.floatingCardRightLabel}>{hero.floatingCard.right.title}</p>
-                <p className={s.floatingCardRightValue}>{hero.floatingCard.right.subtitle}</p>
+                <p className={s.floatingCardRightLabel}>
+                  {hero.floatingCard.right.title}
+                </p>
+                <p className={s.floatingCardRightValue}>
+                  {hero.floatingCard.right.subtitle}
+                </p>
                 <div className={s.barsWrap}>
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <div key={i} className={s.bar} style={{ opacity: 0.4 + i * 0.15 }} />
+                    <div
+                      key={i}
+                      className={s.bar}
+                      style={{ opacity: 0.4 + i * 0.15 }}
+                    />
                   ))}
                 </div>
               </div>

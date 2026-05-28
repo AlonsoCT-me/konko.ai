@@ -1,0 +1,72 @@
+{
+  // Editor
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "editor.rulers": [
+    100
+  ],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "editor.suggest.showStatusBar": true,
+  // TypeScript
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  // Tailwind CSS
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "cva\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ],
+    [
+      "cx\\(([^)]*)\\)",
+      "(?:'|\"|`)([^']*)(?:'|\"|`)"
+    ],
+    [
+      "cn\\(([^)]*)\\)",
+      "(?:'|\"|`)([^']*)(?:'|\"|`)"
+    ]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  // CSS / SCSS
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  // ESLint
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  // Files
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.next": true,
+    "**/node_modules": true,
+    "**/.git": true,
+    "tsconfig.tsbuildinfo": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/pnpm-lock.yaml": true,
+    "**/package-lock.json": true
+  },
+  // Explorer
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js, ${capture}.d.ts",
+    "*.tsx": "${capture}.module.css",
+    "tailwind.config.*": "postcss.config.*",
+    "next.config.*": "next-env.d.ts, netlify.toml",
+    "package.json": "package-lock.json, pnpm-lock.yaml, pnpm-workspace.yaml, .eslintrc*, tsconfig*, global.d.ts, components.json"
+  }
+}
