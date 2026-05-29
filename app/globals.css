@@ -119,6 +119,8 @@
   h4,
   h5,
   h6 {
+    @apply font-semibold tracking-tight;
+    color: hsl(var(--foreground));
     @apply font-semibold tracking-tight text-neutral-950;
   }
 }
