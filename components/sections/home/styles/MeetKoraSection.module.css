@@ -1,39 +1,73 @@
 .meetSection {
-  @apply py-20 lg:py-28 bg-white;
+  @apply bg-white py-20 lg:py-28;
 }
 
 .meetContainer {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply mx-auto max-w-7xl px-6 sm:px-8 lg:px-12;
 }
 
-.meetHeader {
-  @apply mb-16;
+.meetGrid {
+  @apply grid items-center gap-12 lg:grid-cols-2 lg:gap-16;
+}
+
+/* ── Columna texto ── */
+.meetContent {
+  @apply flex flex-col items-start;
 }
 
 .meetHeading {
-  @apply text-3xl lg:text-5xl font-bold text-neutral-950 leading-tight;
+  @apply text-4xl font-bold leading-tight text-neutral-950 lg:text-5xl;
 }
 
 .meetDescription {
-  @apply mt-4 text-lg text-neutral-500 max-w-xl;
+  @apply mt-5 max-w-md text-lg leading-relaxed text-neutral-500;
 }
 
 .cta {
-  @apply mt-6 inline-flex items-center gap-2 text-sm font-semibold text-neutral-950 hover:text-brand-gold transition-colors;
+  @apply mt-8 inline-flex items-center gap-2 text-sm font-semibold text-neutral-950 transition-colors hover:text-brand-gold;
 }
 
 .ctaIcon {
-  @apply w-4 h-4 transition-transform;
+  @apply h-4 w-4 transition-transform;
 }
 
 .cta:hover .ctaIcon {
   transform: translateX(0.25rem);
 }
 
-.meetGrid {
-  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+/* ── Columna imagen ── */
+.imageCol {
+  @apply flex justify-end;
 }
 
 .imageWrap {
-  @apply mt-6 relative h-48 rounded-2xl overflow-hidden;
+  @apply relative w-full overflow-hidden rounded-3xl;
+  /* Fondo beige como en el diseño */
+  background-color: #ede6d6;
+  aspect-ratio: 4 / 4.2;
+  max-width: 540px;
+}
+
+/* ── Floating WhatsApp card ── */
+.floatingCard {
+  @apply absolute bottom-5 left-5 flex items-center gap-3 rounded-2xl px-4 py-3;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  max-width: 260px;
+}
+
+.waIcon {
+  @apply flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full;
+  background-color: #25d366;
+}
+
+.cardTitle {
+  @apply text-sm font-semibold text-neutral-900;
+}
+
+.cardSub {
+  @apply text-xs text-neutral-500;
 }

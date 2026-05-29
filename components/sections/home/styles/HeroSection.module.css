@@ -14,19 +14,6 @@
   opacity: 0.5;
 }
 
-.bgDecor {
-  @apply pointer-events-none absolute right-0 top-0;
-  width: 520px;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bgDecorInner {
-  @apply absolute right-0 top-0;
-  width: 520px;
-  height: 100%;
-}
-
 .heroContainer {
   @apply relative mx-auto w-full max-w-7xl px-8 sm:px-12 lg:px-16;
 }
