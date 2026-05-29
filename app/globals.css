@@ -104,7 +104,11 @@
   }
 
   body {
+<<<<<<< HEAD
     @apply bg-background text-foreground;
+=======
+    @apply bg-white text-neutral-900;
+>>>>>>> 53abb9b (site update 28)
     font-feature-settings: "kern", "liga", "clig", "calt";
   }
 
