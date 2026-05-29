@@ -2,18 +2,17 @@
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
 import { Button } from '@/components/ui/button';
-import { useLocale } from '@/lib/locale-context';
-import s from './styles/AboutCTA.module.css';
 
 export function AboutCTA() {
-  const { tAbout } = useLocale();
-  const section = tAbout.cta;
+  const { t } = useTranslation();
 
   return (
-    <section className={s.section}>
-      <div className={s.bgDecor} aria-hidden="true">
-        <div className={s.bgDecorInner}>
+    <section className="relative overflow-hidden bg-brand-off-white py-20 lg:py-28">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute bottom-0 left-1/2 h-[400px] w-[800px] -translate-x-1/2 opacity-30">
           <svg viewBox="0 0 800 400" fill="none">
             {Array.from({ length: 10 }).map((_, i) => (
               <ellipse
@@ -28,20 +27,24 @@ export function AboutCTA() {
         </div>
       </div>
 
-      <div className={s.container}>
-        <h2 className={s.heading}>{section.heading}</h2>
-        <p className={s.description}>{section.description}</p>
-        <div className={s.ctas}>
+      <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 className="mb-6 text-3xl font-bold leading-tight text-neutral-950 sm:text-4xl lg:text-5xl">
+          {t("Ready to transform your clinic?")}
+        </h2>
+        <p className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-neutral-500 lg:text-lg">
+          {t("Join hundreds of clinics already using Konko to automate their operations and improve their patients' experience.")}
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <Button size="xl" variant="default" asChild>
             <Link href="#demo">
-              {section.primaryBtn}
-              <ArrowRight className="w-4 h-4" />
+              {t('Schedule Demo')}
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
           <Button size="xl" variant="outline" asChild>
             <Link href="/">
-              {section.secondaryBtn}
-              <ArrowRight className="w-4 h-4" />
+              {t('Learn about the product')}
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
         </div>

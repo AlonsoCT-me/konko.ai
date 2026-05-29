@@ -1,8 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useLocale } from '@/lib/locale-context';
-import s from './styles/SpecialtiesSection.module.css';
+import { useTranslation } from 'react-i18next';
 
 const specialtyImages = [
   'https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=400',
@@ -15,36 +14,50 @@ const specialtyImages = [
   'https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=400',
 ];
 
-const specialtyKeys = ['dentistry', 'gastroenterology', 'urology', 'cardiology', 'pediatrics', 'dermatology', 'ophthalmology', 'orthopedics'] as const;
-
 export function SpecialtiesSection() {
-  const { t } = useLocale();
-  const section = t.specialties;
+  const { t } = useTranslation();
+
+  const specialties = [
+    t('Dentistry'),
+    t('Gastroenterology'),
+    t('Urology'),
+    t('Cardiology'),
+    t('Pediatrics'),
+    t('Dermatology'),
+    t('Ophthalmology'),
+    t('Orthopedics'),
+  ];
 
   return (
-    <section id="especialidades" className={s.specSection}>
-      <div className={s.specContainer}>
-        <div className={s.specHeader}>
+    <section id="especialidades" className="overflow-hidden bg-brand-off-white py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <h2 className={s.specHeading}>{section.heading}</h2>
-            <p className={s.specDescription}>{section.description}</p>
+            <h2 className="text-3xl font-bold leading-tight text-neutral-950 lg:text-5xl">
+              {t('Designed for your specialty')}
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-neutral-500">
+              {t("Kora adapts and understands the patients of each type of clinic. From dentistry to cardiology, Kora speaks your specialty's language.")}
+            </p>
           </div>
-          <div className={s.count}>{section.countBadge}</div>
+          <div className="hidden text-right text-sm font-medium text-neutral-400 lg:block">
+            {t('+127 specialties available')}
+          </div>
         </div>
 
-        <div className={s.specGrid}>
-          {specialtyKeys.map((key, i) => (
-            <div key={key} className={`${s.specCard} group`}>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {specialties.map((name, i) => (
+            <div key={name} className="group relative h-48 cursor-pointer overflow-hidden rounded-2xl">
               <Image
                 src={specialtyImages[i]}
-                alt={section.list[key]}
+                alt={name}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
-              <div className={s.cardOverlay} />
-              <div className={s.cardLabel}>
-                <p className={s.cardLabelText}>{section.list[key]}</p>
+              <div className="absolute inset-0 [background:linear-gradient(to_top,rgba(0,0,0,0.6),rgba(0,0,0,0.1),transparent)]" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="text-sm font-semibold text-white">{name}</p>
               </div>
             </div>
           ))}

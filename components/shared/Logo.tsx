@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
-import styles from "./styles/Logo.module.css";
-
 interface LogoProps {
   className?: string;
   variant?: "dark" | "light";
@@ -20,7 +18,7 @@ export function Logo({ className, variant = "dark" }: LogoProps) {
         priority
         className={cn(
           "h-8 w-auto transition-all duration-300",
-          variant === "light" && styles.logoWhite,
+          variant === "light" && "brightness-0 invert",
         )}
       />
     </div>

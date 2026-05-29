@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "@/lib/locale-context";
+import { useTranslation } from "react-i18next";
+
 import { Carousel } from "@/components/shared/Carousel";
-import s from "./styles/LogosCarousel.module.css";
 
 interface LogoItem {
   src: string;
@@ -26,13 +26,13 @@ const logos: LogoItem[] = [
 
 function LogoItem({ logo }: { logo: LogoItem }) {
   const img = (
-    <div className={s.logoWrap}>
+    <div className="flex items-center justify-center [filter:grayscale(100%)_brightness(1.1)] [opacity:0.55] [transition:filter_0.25s_ease,opacity_0.25s_ease,transform_0.25s_ease] group-hover:[filter:grayscale(100%)_brightness(0.2)] group-hover:opacity-100 group-hover:scale-[1.08]">
       <Image
         src={logo.src}
         alt={logo.alt}
         width={300}
         height={100}
-        className={s.logoImg}
+        className="w-full max-w-full object-contain"
       />
     </div>
   );
@@ -43,25 +43,27 @@ function LogoItem({ logo }: { logo: LogoItem }) {
         href={logo.href}
         target="_blank"
         rel="noopener noreferrer"
-        className={s.logoLink}
+        className="group outline-none focus-visible:[&>div]:[filter:grayscale(100%)_brightness(0.2)] focus-visible:[&>div]:opacity-100 focus-visible:[&>div]:scale-[1.08]"
       >
         {img}
       </Link>
     );
   }
 
-  return img;
+  return <div className="group">{img}</div>;
 }
 
 export function LogosCarousel() {
-  const { t } = useLocale();
+  const { t } = useTranslation();
 
   const items = logos.map((logo) => <LogoItem key={logo.src} logo={logo} />);
 
   return (
-    <section className={s.section}>
-      <div className={s.container}>
-        <p className={s.label}>{t.trustedBy.label}</p>
+    <section className="overflow-hidden border-y border-neutral-100 bg-white py-10">
+      <div className="mx-auto mb-8 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-sm font-medium text-neutral-400">
+          {t("Hundreds of clinics already trust us")}
+        </p>
       </div>
       <Carousel items={items} speed={35} gap={56} pauseOnHover />
     </section>
