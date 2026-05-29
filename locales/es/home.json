@@ -4,7 +4,8 @@
       "features": "Características",
       "security": "Seguridad",
       "about": "Nosotros",
-      "blog": "Blog"
+      "blog": "Blog",
+      "cases": "Casos"
     },
     "ariaLabel": "Konko.ai - Inicio",
     "login": "Iniciar sesión",
@@ -124,36 +125,48 @@
       "working": "Equipo Konko trabajando"
     }
   },
-  "meetKora": {
-    "heading": "Conoce a Kora",
-    "description": "La nueva asistente IA que te ayudará a transformar tu clínica con tecnología de los mejores del planeta.",
-    "cta": "Probar Kora",
+  "theFeatures": {
+    "heading": "Meet Kora",
+    "description": "The new AI assistant that will help you transform your clinic with technology from the best in the world.",
+    "cta": "Try Kora",
     "features": {
       "scheduling": {
-        "tag": "Agendamiento",
-        "title": "Convierte más mensajes en citas programadas",
-        "description": "No pierdas pacientes por no responder a tiempo. Kora contesta al instante por WhatsApp y agenda citas automáticamente."
+        "tag": "Scheduling",
+        "title": "Convert more messages into scheduled appointments",
+        "description": "Don't lose patients by not responding in time. Kora replies instantly on WhatsApp and automatically schedules appointments."
       },
       "loyalty": {
-        "tag": "Fidelización",
-        "title": "Fideliza tus pacientes con la mejor atención",
-        "description": "Kora recuerda cada detalle, envía recordatorios personalizados y hace seguimiento post-consulta de forma automática."
+        "tag": "Loyalty",
+        "title": "Build patient loyalty with the best care",
+        "description": "Kora remembers every detail, sends personalized reminders, and follows up post-consultation automatically."
       },
       "efficiency": {
-        "tag": "Eficiencia",
-        "title": "Libera a tu equipo del caos operativo",
-        "description": "Tu personal deja de responder WhatsApps repetitivos y se enfoca en lo que más importa: el paciente frente a ellos."
+        "tag": "Efficiency",
+        "title": "Free your team from operational chaos",
+        "description": "Your staff stops answering repetitive WhatsApps and focuses on what matters most: the patient in front of them."
       },
       "analytics": {
         "tag": "Analytics",
-        "title": "Obtén visibilidad y control total",
-        "description": "Dashboard en tiempo real de todas tus consultas y conversaciones. Toma mejores decisiones cada día."
+        "title": "Gain full visibility and control",
+        "description": "Real-time dashboard of all your consultations and conversations. Make better decisions every day."
       },
       "implementation": {
-        "tag": "Implementación",
-        "title": "Lista en días y mejora cada día",
-        "description": "Onboarding en menos de 48 horas. Kora aprende de tu clínica y mejora continuamente con cada conversación."
+        "tag": "Implementation",
+        "title": "Ready in days and improving every day",
+        "description": "Onboarding in less than 48 hours. Kora learns about your clinic and continuously improves with each conversation."
       }
+    }
+  },
+  "meetKora": {
+    "heading": {
+      "pre": "Conoce a",
+      "highlight": "Kora"
+    },
+    "description": "La nueva asistente IA que te ayudará a transformar tu clínica. Construida con la tecnología y modelos de lenguaje más avanzados del planeta.",
+    "cta": "Probar Kora",
+    "floatingCard": {
+      "title": "¡Hola, soy Kora!",
+      "subtitle": "¿Cómo puedo ayudarte hoy?"
     }
   },
   "metaPartner": {
@@ -173,7 +186,10 @@
     "heroLabel": "mensajes procesados por el mes en toda la plataforma Konko",
     "stats": {
       "consultations": { "value": "120,000+", "label": "Consultas atendidas" },
-      "responseTime": { "value": "30 seg", "label": "Tiempo de respuesta promedio" },
+      "responseTime": {
+        "value": "30 seg",
+        "label": "Tiempo de respuesta promedio"
+      },
       "satisfaction": { "value": "99.9%", "label": "Satisfacción reportada" },
       "nps": { "value": "9/10", "label": "NPS de pacientes" }
     }
@@ -206,12 +222,30 @@
     "heading": "Seguridad en cada conversación",
     "description": "La información de tus pacientes está protegida con los más altos estándares de seguridad de la industria.",
     "certifications": {
-      "soc2": { "name": "SOC 2", "description": "Auditoría de seguridad y disponibilidad" },
-      "gdpr": { "name": "GDPR", "description": "Cumplimiento de protección de datos europeo" },
-      "iso": { "name": "ISO 27001", "description": "Gestión de seguridad de la información" },
-      "liveness": { "name": "Liveness", "description": "Verificación de identidad en tiempo real" },
-      "hl7": { "name": "HL7", "description": "Estándares de interoperabilidad en salud" },
-      "fhir": { "name": "HL7 FHIR", "description": "Interoperabilidad moderna de datos médicos" }
+      "soc2": {
+        "name": "SOC 2",
+        "description": "Auditoría de seguridad y disponibilidad"
+      },
+      "gdpr": {
+        "name": "GDPR",
+        "description": "Cumplimiento de protección de datos europeo"
+      },
+      "iso": {
+        "name": "ISO 27001",
+        "description": "Gestión de seguridad de la información"
+      },
+      "liveness": {
+        "name": "Liveness",
+        "description": "Verificación de identidad en tiempo real"
+      },
+      "hl7": {
+        "name": "HL7",
+        "description": "Estándares de interoperabilidad en salud"
+      },
+      "fhir": {
+        "name": "HL7 FHIR",
+        "description": "Interoperabilidad moderna de datos médicos"
+      }
     },
     "bottomItems": {
       "encryption": {
@@ -268,9 +302,15 @@
   "trustedBy": {
     "label": "Cientos de clínicas ya confían en nosotros",
     "clinics": {
-      "eticaOral": { "name": "ÉticaOral", "tagline": "Odontología con responsabilidad" },
+      "eticaOral": {
+        "name": "ÉticaOral",
+        "tagline": "Odontología con responsabilidad"
+      },
       "labEchandi": { "name": "Lab Echandi" },
-      "urologiaAvanzada": { "name": "Urología Avanzada", "tagline": "Dr. Mario González" },
+      "urologiaAvanzada": {
+        "name": "Urología Avanzada",
+        "tagline": "Dr. Mario González"
+      },
       "teraMed": { "name": "TeraMed" },
       "clinicaDentalPlus": { "name": "Clínica Dental Plus" },
       "medCare": { "name": "MedCare" }

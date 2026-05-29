@@ -1,64 +1,113 @@
 .navHeader {
-  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+  @apply fixed left-0 right-0 top-0 z-50 transition-all duration-300;
 }
 
 .headerScrolled {
-  @apply backdrop-blur-md border-b border-neutral-100 shadow-card-sm;
+  @apply border-b border-neutral-100 shadow-card-sm backdrop-blur-md;
   background-color: rgba(255, 255, 255, 0.95);
 }
 
 .headerTransparent {
-  @apply bg-transparent;
+  @apply bg-white;
 }
 
 .navContainer {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply mx-auto max-w-7xl px-6 sm:px-8 lg:px-12;
 }
 
 .nav {
-  @apply flex items-center justify-between h-16 lg:h-18;
+  @apply flex h-16 items-center justify-between lg:h-20;
 }
 
+/* ── Desktop links — pegados al logo con gap generoso ── */
 .desktopLinks {
-  @apply hidden lg:flex items-center gap-1;
+  @apply ml-12 hidden items-center gap-2 lg:flex;
 }
 
 .navLink {
-  @apply px-4 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-950 transition-colors rounded-full hover:bg-neutral-100;
+  @apply px-4 py-2 text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-950;
 }
 
+/* ── Desktop actions — al extremo derecho ── */
 .desktopActions {
-  @apply hidden lg:flex items-center gap-3;
+  @apply ml-auto hidden items-center gap-3 lg:flex;
 }
 
 .loginLink {
-  @apply text-sm font-medium text-neutral-600 hover:text-neutral-950 transition-colors;
+  @apply rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-950;
 }
 
-.logoWhite {
-  filter: brightness(0) invert(1);
-}
-
+/* ── Mobile toggle ── */
 .mobileToggle {
-  @apply lg:hidden p-2 rounded-lg hover:bg-neutral-100 transition-colors;
+  @apply relative z-[60] flex h-9 w-9 items-center justify-center rounded-lg p-2 text-neutral-700 transition-colors hover:bg-neutral-100 lg:hidden;
 }
 
+.hamburgerIcon {
+  @apply relative flex flex-col items-center justify-center;
+  width: 20px;
+  height: 20px;
+}
+
+.hamburgerLine {
+  @apply absolute block rounded-full bg-current;
+  width: 20px;
+  height: 2px;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s ease,
+    top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado cerrado */
+.hamburgerLine:nth-child(1) {
+  top: 4px;
+}
+.hamburgerLine:nth-child(2) {
+  top: 9px;
+}
+.hamburgerLine:nth-child(3) {
+  top: 14px;
+}
+
+/* Estado abierto — se convierte en X */
+.hamburgerOpen .hamburgerLine:nth-child(1) {
+  top: 9px;
+  transform: rotate(45deg);
+}
+.hamburgerOpen .hamburgerLine:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburgerOpen .hamburgerLine:nth-child(3) {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+/* ── Mobile menu — full screen ── */
 .mobileMenu {
-  @apply lg:hidden bg-white border-t border-neutral-100;
+  @apply fixed inset-0 top-0 z-50 flex flex-col bg-white text-neutral-700 lg:hidden;
 }
 
-.mobileMenuInner {
-  @apply max-w-7xl mx-auto px-4 py-4 space-y-1;
+.mobileMenuHeader {
+  @apply flex h-16 items-center justify-between border-b border-neutral-100 px-6;
+}
+
+.mobileMenuBody {
+  @apply flex-1 space-y-1 overflow-y-auto px-6 pt-8;
 }
 
 .mobileLink {
-  @apply block px-4 py-3 text-sm font-medium text-neutral-700 hover:text-neutral-950 hover:bg-neutral-50 rounded-xl transition-colors;
+  @apply block border-b border-neutral-100 py-4 text-2xl font-semibold text-neutral-700 transition-colors hover:text-neutral-950;
 }
 
 .mobileLangRow {
-  @apply pt-2 pb-1;
+  @apply border-b border-neutral-100 py-4;
 }
 
-.mobileCtas {
-  @apply pt-3 pb-1 flex flex-col gap-3;
+.mobileLangBtn {
+  @apply flex items-center gap-2 text-2xl font-semibold text-neutral-700;
+}
+
+.mobileMenuFooter {
+  @apply flex flex-col gap-3 px-6 pb-8 pt-4;
 }
