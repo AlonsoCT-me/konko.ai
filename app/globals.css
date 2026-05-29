@@ -104,7 +104,15 @@
   }
 
   body {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    /* ✅ Ahora usa las variables, respeta dark mode automáticamente */
+>>>>>>> 21ebf3b (resolve conflicts)
     @apply bg-background text-foreground;
+=======
+    @apply bg-white text-neutral-900;
+>>>>>>> a2714f0 (resolve conflicts)
     font-feature-settings: "kern", "liga", "clig", "calt";
   }
 
@@ -114,8 +122,12 @@
   h4,
   h5,
   h6 {
+<<<<<<< HEAD
     @apply font-semibold tracking-tight;
     color: hsl(var(--foreground));
+=======
+    @apply font-semibold tracking-tight text-neutral-950;
+>>>>>>> a2714f0 (resolve conflicts)
   }
 }
 
