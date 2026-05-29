@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/sections/home/HeroSection";
 import { MeetKoraSection } from "@/components/sections/home/MeetKoraSection";
+import { BenefitsSection } from "@/components/sections/home/BenefitsSection";
 import { AILatamSection } from "@/components/sections/home/AILatamSection";
 import { RevolutionSection } from "@/components/sections/home/RevolutionSection";
 import { TalkToKoraSection } from "@/components/sections/home/TalkToKoraSection";
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HeroSection />
       <LogosCarousel />
       <MeetKoraSection />
+      <BenefitsSection />
       <AILatamSection />
       <RevolutionSection />
       <TalkToKoraSection />
