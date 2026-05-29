@@ -104,11 +104,12 @@
   }
 
   body {
-<<<<<<< HEAD
     @apply bg-background text-foreground;
-=======
+
     @apply bg-white text-neutral-900;
->>>>>>> 53abb9b (site update 28)
+
+    @apply bg-white text-neutral-900;
+
     font-feature-settings: "kern", "liga", "clig", "calt";
   }
 
@@ -118,8 +119,7 @@
   h4,
   h5,
   h6 {
-    @apply font-semibold tracking-tight;
-    color: hsl(var(--foreground));
+    @apply font-semibold tracking-tight text-neutral-950;
   }
 }
 
