@@ -99,7 +99,7 @@ export function BenefitsSection() {
           </div>
 
           {/* Card 4 */}
-          <div className="relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-[#ffff] after:pointer-events-none after:absolute after:bottom-[0px] after:left-[100px ] after:right-[0] after:top-[30%] after:h-[135%] after:w-[120%] after:rounded-full after:border-[100px] after:border-[#F8EFCF] after:opacity-70 after:content-[''] md:col-span-8 md:h-[660px] md:after:bottom-[0] md:after:h-[135%] md:after:w-[120%] md:after:border-[100px]">
+          <div className="relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-white after:pointer-events-none after:absolute after:left-0 after:top-0 after:h-[105%] after:w-full after:rotate-[0deg] after:scale-105 after:bg-[url('/images/vector-circle.svg')] after:bg-[length:120%] after:bg-[position:-80%_-60%] after:bg-no-repeat after:opacity-75 after:content-[''] md:col-span-8 md:h-[660px]">
             <div className="relative z-10 p-9">
               <h3 className="card-title">
                 {t("Gain full visibility and control")}
@@ -126,7 +126,7 @@ export function BenefitsSection() {
           </div>
 
           {/* Card 5 */}
-          <div className="relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-[#ffff] after:pointer-events-none after:absolute after:bottom-[-180px] after:left-1/2 after:h-[520px] after:w-[520px] after:-translate-x-1/2 after:rounded-full after:border-[72px] after:border-[#F8EFCF] after:opacity-70 after:content-[''] md:col-span-4 md:h-[660px] md:after:bottom-[-330px] md:after:h-[760px] md:after:w-[760px] md:after:border-[100px]">
+          <div className="cardB relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-[#ffff] after:pointer-events-none after:absolute after:left-0 after:top-0 after:h-full after:w-full after:rotate-[0deg] after:scale-105 after:bg-[url('/images/vector-circle.svg')] after:bg-[length:250%] after:bg-[position:center_150px] after:bg-no-repeat after:opacity-75 after:content-[''] md:col-span-4 md:h-[660px]">
             <div className="relative z-10 p-9">
               <h3 className="card-title">
                 {t("Ready in days and improving every day")}

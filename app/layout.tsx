@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -13,6 +13,20 @@ const inter = Inter({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: [
+    {
+      media: "(prefers-color-scheme: light)",
+      color: "#ffffff",
+    },
+    {
+      media: "(prefers-color-scheme: dark)",
+      color: "#050505",
+    },
+  ],
+  colorScheme: "light dark",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://konko.ai"),
   title: {
@@ -21,6 +35,36 @@ export const metadata: Metadata = {
   },
   description:
     "Kora, la asistente IA de Konko, transforma tu clínica: agenda citas 24/7 por WhatsApp, fideliza pacientes y reduce la carga operativa de tu equipo. Partner oficial de Meta.",
+  icons: {
+    icon: [
+      {
+        url: "/images/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/images/favicon.svg",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/images/favicon-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/images/favicon-16x16.png",
+        type: "image/png",
+        sizes: "16x16",
+      },
+    ],
+    apple: [
+      {
+        url: "/images/apple-touch-icon.png",
+        sizes: "180x180",
+      },
+    ],
+    shortcut: ["/images/favicon.ico"],
+  },
+  manifest: "/site.webmanifest",
   keywords: [
     "IA para clínicas",
     "asistente IA médica",
@@ -83,9 +127,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={inter.variable}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/images/favicon.ico" sizes="any" />
+        <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
