@@ -1,79 +1,162 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import Image from "next/image";
+import Link from "next/link";
 
-const testimonialImages = [
-  'https://images.pexels.com/photos/5207088/pexels-photo-5207088.jpeg?auto=compress&cs=tinysrgb&w=200',
-  'https://images.pexels.com/photos/5214949/pexels-photo-5214949.jpeg?auto=compress&cs=tinysrgb&w=200',
-  'https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=200',
-];
+import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function RevolutionSection() {
   const { t } = useTranslation();
 
   const testimonials = [
     {
-      quote: t("Kora completely transformed appointment management at our clinic. We reduced cancellations by 60% in the first month."),
-      name: "Dr. Carlos Méndez",
-      role: t("Medical Director"),
-      clinic: "Clínica Urología Avanzada",
-    },
-    {
-      quote: t("The team can focus on patients instead of answering WhatsApps all day. Productivity increased incredibly."),
-      name: "Dra. María Torres",
-      role: t("Founder"),
-      clinic: "ÉticaOral",
-    },
-    {
-      quote: t("Konko's AI understands the medical context in a way other platforms simply can't. It's like having an expert receptionist 24/7."),
-      name: "Dr. Juan Echandi",
-      role: t("Director"),
-      clinic: "Lab Echandi",
+      image: "/images/doctor-clinical.jpg",
+      logo: "/images/urologia-avanzada.svg",
+      quote: t("testimonial_1_quote"),
+      name: t("testimonial_1_name"),
+      role: t("testimonial_1_role"),
     },
   ];
 
+  const hasMultipleTestimonials = testimonials.length > 1;
+
   return (
-    <section className="bg-brand-off-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 text-center">
-          <h2 className="text-3xl font-bold leading-tight text-neutral-950 lg:text-5xl">
-            {t('The healthcare revolution in Latam')}
+    <section className="relative overflow-hidden bg-white py-20 lg:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#DED9C8_1.2px,transparent_1.2px)] opacity-70 [background-size:28px_28px]" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 lg:mb-12">
+          <h2 className="relative inline-block max-w-[780px] text-[46px] font-bold leading-[1.05] tracking-[-0.04em] text-neutral-950 md:text-[48px] lg:text-[48px]">
+            {t("The healthcare revolution in Latam")}
+            <span className="absolute -bottom-2 left-[70px] hidden h-[10px] w-[280px] bg-[url('/images/gold-underline.svg')] bg-contain bg-no-repeat md:block" />
           </h2>
-          <p className="mt-4 text-lg text-neutral-500">
-            {t('Told by its true protagonists')}
+
+          <p className="mt-4 text-[30px] leading-tight tracking-[-0.03em] text-neutral-500 md:text-[28px]">
+            {t("Told by its true protagonists")}
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((testimonial, i) => (
-            <div key={i} className="overflow-hidden rounded-3xl bg-white shadow-card transition-shadow duration-300 hover:shadow-card-lg">
-              <div className="relative h-52 overflow-hidden">
+        {/* Desktop accordion */}
+        <div className="hidden h-[550px] gap-5 lg:flex">
+          {testimonials.map((item, index) => {
+            const isDefaultOpen = index === 0;
+
+            return (
+              <article
+                key={item.name}
+                className={`group relative overflow-hidden rounded-[24px] transition-all duration-500 ease-out ${
+                  hasMultipleTestimonials
+                    ? isDefaultOpen
+                      ? "flex-[3.2]"
+                      : "flex-1"
+                    : "flex-1"
+                } ${hasMultipleTestimonials ? "hover:flex-[3.2]" : ""} `}
+              >
                 <Image
-                  src={testimonialImages[i]}
-                  alt={testimonial.name}
+                  src={item.image}
+                  alt={item.name}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
                 />
-                <div className="absolute inset-0 [background:linear-gradient(to_top,rgba(0,0,0,0.5),transparent)]" />
-              </div>
-              <div className="p-6">
-                <svg className="mb-4 h-8 w-8 text-brand-gold" fill="currentColor" viewBox="0 0 32 32">
-                  <path d="M10 8C6.686 8 4 10.686 4 14v10h10V14H7.172C7.582 11.838 9.09 10.172 11 9.5L10 8zm16 0c-3.314 0-6 2.686-6 6v10h10V14h-6.828C23.582 11.838 25.09 10.172 27 9.5L26 8z" />
-                </svg>
-                <p className="mb-5 text-sm leading-relaxed text-neutral-600">{testimonial.quote}</p>
-                <div className="flex items-center gap-3">
-                  <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-full">
-                    <Image src={testimonialImages[i]} alt={testimonial.name} fill className="object-cover" />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+
+                <div
+                  className={`absolute inset-x-0 bottom-0 z-10 p-10 text-white transition-opacity duration-300 ${
+                    isDefaultOpen || !hasMultipleTestimonials
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-100"
+                  } `}
+                >
+                  <p className="max-w-[760px] text-[24px] italic leading-[1.35]">
+                    “{item.quote}”
+                  </p>
+
+                  <div className="mt-8 flex items-end justify-between gap-8">
+                    <div>
+                      <p className="text-lg font-bold">{item.name}</p>
+                      <p className="text-base text-white/90">{item.role}</p>
+                    </div>
+
+                    <Image
+                      src={item.logo}
+                      alt=""
+                      width={170}
+                      height={60}
+                      className="h-auto max-w-[170px] object-contain"
+                    />
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-neutral-900">{testimonial.name}</p>
-                    <p className="text-xs text-neutral-500">{testimonial.role} · {testimonial.clinic}</p>
-                  </div>
+
+                  <Link
+                    href="#demo"
+                    className="group mt-8 inline-flex items-center gap-2 text-base font-medium transition-colors hover:text-brand-gold"
+                  >
+                    {t("Know story")}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
+
+                {hasMultipleTestimonials && !isDefaultOpen && (
+                  <div className="absolute inset-0 bg-black/15 transition-opacity duration-300 group-hover:opacity-0" />
+                )}
+              </article>
+            );
+          })}
+        </div>
+
+        {/* Mobile touch slider */}
+        <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">
+          {testimonials.map((item) => (
+            <article
+              key={item.name}
+              className={`relative h-[835px] snap-start overflow-hidden rounded-[20px] ${
+                testimonials.length === 1
+                  ? "min-w-full"
+                  : "min-w-[86%] sm:min-w-[70%]"
+              } `}
+            >
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                className="object-cover"
+                sizes={
+                  testimonials.length === 1
+                    ? "100vw"
+                    : "(max-width: 768px) 86vw, 70vw"
+                }
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+
+              <div className="absolute inset-x-0 bottom-0 z-10 p-8 text-white">
+                <p className="text-[26px] leading-[1.28]">"{item.quote}"</p>
+
+                <div className="mt-10 flex items-end justify-between gap-5">
+                  <div>
+                    <p className="text-[22px] font-bold">{item.name}</p>
+                    <p className="text-[20px] leading-snug text-white/90">
+                      {item.role}
+                    </p>
+                  </div>
+
+                  <Image
+                    src={item.logo}
+                    alt=""
+                    width={150}
+                    height={52}
+                    className="h-auto max-w-[140px] object-contain"
+                  />
+                </div>
+
+                <button className="mt-8 inline-flex items-center gap-3 text-base font-medium">
+                  {t("Know story")}
+                  <ArrowRight className="h-5 w-5" />
+                </button>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

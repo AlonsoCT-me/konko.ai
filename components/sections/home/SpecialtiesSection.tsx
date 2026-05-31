@@ -1,66 +1,171 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
-const specialtyImages = [
-  'https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/4225880/pexels-photo-4225880.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/5214949/pexels-photo-5214949.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=400',
+const specialties = [
+  { key: "Internal Medicine", image: "medicina-interna.png" },
+  { key: "Neonatology", image: "neonatologia.png" },
+  { key: "Pediatrics", image: "pediatria.png" },
+  { key: "Geriatrics", image: "geriatria.png" },
+  { key: "Urology", image: "urologia.png" },
+  { key: "Clinical Nutrition", image: "nutricion-clinica.png" },
+  { key: "Hematology", image: "hematologia.png" },
+  { key: "Cardiology", image: "cardiologia.png" },
+  { key: "Pulmonology", image: "neumologia.png" },
+  { key: "Gastroenterology", image: "gastroenterologia.png" },
+  { key: "Nephrology", image: "nefrologia.png" },
+  { key: "Endocrinology", image: "endocrinologia.png" },
+  { key: "Rheumatology", image: "reumatologia.png" },
+  { key: "Oncology", image: "oncologia.png" },
+  { key: "General Medicine", image: "medicina-general.png" },
+  { key: "Family Medicine", image: "medicina-familiar.png" },
+  { key: "Gynecology", image: "ginecologia.png" },
+  { key: "Obstetrics", image: "obstetricia.png" },
+  { key: "Clinical Immunology", image: "inmunologia-clinica.png" },
+  { key: "Allergology", image: "alergologia.png" },
 ];
+
+function SpecialtyCard({ name, image }: { name: string; image: string }) {
+  return (
+    <article className="relative h-[190px] w-[190px] shrink-0 overflow-hidden rounded-lg transition-transform duration-300 hover:scale-[1.04]">
+      <Image
+        src={`/images/${image}`}
+        alt={name}
+        fill
+        className="select-none object-cover"
+        sizes="190px"
+        draggable={false}
+      />
+
+      <span className="absolute bottom-4 left-4 text-sm font-medium text-brand-burgundy">
+        {name}
+      </span>
+    </article>
+  );
+}
 
 export function SpecialtiesSection() {
   const { t } = useTranslation();
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const specialties = [
-    t('Dentistry'),
-    t('Gastroenterology'),
-    t('Urology'),
-    t('Cardiology'),
-    t('Pediatrics'),
-    t('Dermatology'),
-    t('Ophthalmology'),
-    t('Orthopedics'),
-  ];
+  const firstRow = specialties.slice(0, 10);
+  const secondRow = specialties.slice(10);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+
+    if (!el) return;
+
+    const centerScroll = () => {
+      el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+    };
+
+    centerScroll();
+
+    window.addEventListener("resize", centerScroll);
+
+    return () => {
+      window.removeEventListener("resize", centerScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+
+    if (!el) return;
+
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.pointerType === "touch") return;
+
+      isDown = true;
+      setIsDragging(true);
+      startX = event.clientX;
+      scrollLeft = el.scrollLeft;
+      el.setPointerCapture(event.pointerId);
+    };
+
+    const onPointerMove = (event: PointerEvent) => {
+      if (!isDown) return;
+
+      event.preventDefault();
+
+      const walk = event.clientX - startX;
+      el.scrollLeft = scrollLeft - walk;
+    };
+
+    const stopDragging = (event: PointerEvent) => {
+      if (!isDown) return;
+
+      isDown = false;
+      setIsDragging(false);
+
+      if (el.hasPointerCapture(event.pointerId)) {
+        el.releasePointerCapture(event.pointerId);
+      }
+    };
+
+    el.addEventListener("pointerdown", onPointerDown);
+    el.addEventListener("pointermove", onPointerMove);
+    el.addEventListener("pointerup", stopDragging);
+    el.addEventListener("pointercancel", stopDragging);
+    el.addEventListener("pointerleave", stopDragging);
+
+    return () => {
+      el.removeEventListener("pointerdown", onPointerDown);
+      el.removeEventListener("pointermove", onPointerMove);
+      el.removeEventListener("pointerup", stopDragging);
+      el.removeEventListener("pointercancel", stopDragging);
+      el.removeEventListener("pointerleave", stopDragging);
+    };
+  }, []);
 
   return (
-    <section id="especialidades" className="overflow-hidden bg-brand-off-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-bold leading-tight text-neutral-950 lg:text-5xl">
-              {t('Designed for your specialty')}
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-neutral-500">
-              {t("Kora adapts and understands the patients of each type of clinic. From dentistry to cardiology, Kora speaks your specialty's language.")}
-            </p>
-          </div>
-          <div className="hidden text-right text-sm font-medium text-neutral-400 lg:block">
-            {t('+127 specialties available')}
-          </div>
-        </div>
+    <section
+      id="especialidades"
+      className="w-full overflow-hidden bg-white py-20 lg:py-28"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-20">
+        <div className="mb-14 max-w-[860px] lg:mb-20">
+          <h2 className="text-[44px] font-semibold leading-[52px] text-brand-black md:text-[48px] md:leading-[58px]">
+            {t("Designed for your")}{" "}
+            <span className="gold-underline">{t("specialty")}</span>
+          </h2>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {specialties.map((name, i) => (
-            <div key={name} className="group relative h-48 cursor-pointer overflow-hidden rounded-2xl">
-              <Image
-                src={specialtyImages[i]}
-                alt={name}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              />
-              <div className="absolute inset-0 [background:linear-gradient(to_top,rgba(0,0,0,0.6),rgba(0,0,0,0.1),transparent)]" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="text-sm font-semibold text-white">{name}</p>
-              </div>
-            </div>
-          ))}
+          <p className="mt-4 max-w-[760px] text-[28px] font-normal leading-[34px] text-neutral-600">
+            {t(
+              "Kora adapts and understands the processes and complexities of each type of clinic",
+            )}
+          </p>
+        </div>
+      </div>
+
+      <div
+        ref={scrollRef}
+        className={[
+          "scrollbar-hide w-full overflow-x-auto overflow-y-hidden overscroll-x-contain px-6 pb-2 lg:px-20",
+          "touch-pan-x select-none",
+          isDragging ? "cursor-grabbing" : "cursor-grab",
+        ].join(" ")}
+      >
+        <div className="mx-auto flex w-max flex-col items-center gap-2">
+          <div className="flex items-center justify-center gap-[13px]">
+            {firstRow.map(({ key, image }) => (
+              <SpecialtyCard key={key} name={t(key)} image={image} />
+            ))}
+          </div>
+
+          <div className="flex items-center justify-center gap-[13px]">
+            {secondRow.map(({ key, image }) => (
+              <SpecialtyCard key={key} name={t(key)} image={image} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

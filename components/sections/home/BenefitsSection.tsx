@@ -126,7 +126,7 @@ export function BenefitsSection() {
           </div>
 
           {/* Card 5 */}
-          <div className="cardB relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-[#ffff] after:pointer-events-none after:absolute after:left-0 after:top-0 after:h-full after:w-full after:rotate-[0deg] after:scale-105 after:bg-[url('/images/vector-circle.svg')] after:bg-[length:250%] after:bg-[position:center_150px] after:bg-no-repeat after:opacity-75 after:content-[''] md:col-span-4 md:h-[660px]">
+          <div className="cardB relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-[#ffff] after:pointer-events-none after:absolute after:left-0 after:top-0 after:h-full after:w-full after:rotate-[0deg] after:scale-105 after:bg-[url('/images/vector-circle.svg')] after:bg-[length:250%] after:bg-[position:center_158px] after:bg-no-repeat after:opacity-75 after:content-[''] md:col-span-4 md:h-[660px]">
             <div className="relative z-10 p-9">
               <h3 className="card-title">
                 {t("Ready in days and improving every day")}
