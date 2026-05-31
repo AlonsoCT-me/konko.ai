@@ -1,13 +1,37 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { CtaButton } from "@/components/shared/buttons";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 import { Logo } from "@/components/shared/Logo";
+
+function NavbarButton({
+  href,
+  children,
+  variant = "primary",
+}: {
+  href: string;
+  children: React.ReactNode;
+  variant?: "primary" | "secondary";
+}) {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        "inline-flex h-11 items-center rounded-full px-4 text-sm font-medium leading-5 transition-transform hover:scale-[1.02]",
+        variant === "primary"
+          ? "border border-brand-gold bg-brand-black text-brand-white"
+          : "border border-neutral-100 bg-neutral-100 text-brand-black",
+      )}
+    >
+      {children}
+    </Link>
+  );
+}
 
 export function Navbar() {
   const { t } = useTranslation();
@@ -22,85 +46,102 @@ export function Navbar() {
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 16);
+    handler();
+
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   return (
     <header
       className={cn(
-        "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "border-b border-neutral-100 shadow-card-sm backdrop-blur-md [background-color:rgba(255,255,255,0.95)]"
-          : "bg-white",
+        "fixed left-0 right-0 top-0 z-50 border-b border-brand-border transition-all duration-300",
+        mobileOpen
+          ? "bg-white/80 backdrop-blur-xl"
+          : scrolled
+            ? "bg-white/50 backdrop-blur-md"
+            : "bg-white/50 backdrop-blur-0",
       )}
     >
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <nav className="flex h-16 items-center justify-between lg:h-20">
-          <Link href="/" aria-label={t("Konko.ai - Home")}>
-            <Logo />
-          </Link>
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
+        <nav
+          className={cn(
+            "flex h-[72px] items-center justify-between transition-all duration-300 lg:my-4 lg:h-[68px] lg:px-5",
+            scrolled &&
+              !mobileOpen &&
+              "lg:rounded-[20px] lg:bg-neutral-100/50 lg:backdrop-blur-md",
+          )}
+        >
+          <div className="flex items-center gap-14 lg:gap-16">
+            <Link
+              href="/"
+              aria-label={t("Konko.ai - Home")}
+              onClick={() => setMobileOpen(false)}
+              className="shrink-0"
+            >
+              <Logo className="h-9 w-auto" />
+            </Link>
 
-          <ul className="ml-12 hidden items-center gap-2 lg:flex">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-950"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+            <ul className="hidden items-center gap-10 lg:flex">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm font-medium leading-4 text-[#464D59] transition-colors hover:text-brand-black"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <div className="ml-auto hidden items-center gap-3 lg:flex">
-            <LanguageSwitcher variant="desktop" />
-            <Button size="md" variant="outline" asChild>
-              <Link href="#kora">{t("Log in")}</Link>
-            </Button>
-            <Button size="md" variant="default" asChild>
-              <Link href="#demo">{t("Schedule Demo")}</Link>
-            </Button>
+          <div className="hidden items-center gap-2.5 lg:flex">
+            <div className="flex h-11 items-center rounded-full bg-white px-4 text-base font-medium text-brand-black">
+              <LanguageSwitcher variant="desktop" />
+            </div>
+
+            <NavbarButton href="#kora" variant="secondary">
+              {t("Try Kora")}
+            </NavbarButton>
+
+            <NavbarButton href="#demo">{t("Schedule Demo")}</NavbarButton>
           </div>
 
           <button
-            className="relative z-[60] flex h-9 w-9 items-center justify-center rounded-lg p-2 text-neutral-700 transition-colors hover:bg-neutral-100 lg:hidden"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            type="button"
+            className="relative z-[70] flex size-10 items-center justify-center text-brand-black lg:hidden"
+            onClick={() => setMobileOpen((value) => !value)}
             aria-label={mobileOpen ? t("Close menu") : t("Open menu")}
+            aria-expanded={mobileOpen}
           >
-            <span
-              data-open={mobileOpen}
-              className="group relative flex items-center justify-center"
-              style={{ width: 20, height: 20 }}
-            >
+            <span className="relative block size-6">
               <span
-                className="absolute block w-5 rounded-full bg-current transition-all duration-300"
+                className="absolute left-0 block h-0.5 w-6 rounded-full bg-current transition-all duration-300"
                 style={{
-                  height: 2,
-                  top: mobileOpen ? 9 : 4,
+                  top: mobileOpen ? 11 : 5,
                   transform: mobileOpen ? "rotate(45deg)" : "none",
                 }}
               />
               <span
-                className="absolute block w-5 rounded-full bg-current transition-all duration-300"
+                className="absolute left-0 top-[11px] block h-0.5 w-6 rounded-full bg-current transition-all duration-300"
                 style={{
-                  height: 2,
-                  top: 9,
                   opacity: mobileOpen ? 0 : 1,
                   transform: mobileOpen ? "scaleX(0)" : "none",
                 }}
               />
               <span
-                className="absolute block w-5 rounded-full bg-current transition-all duration-300"
+                className="absolute left-0 block h-0.5 w-6 rounded-full bg-current transition-all duration-300"
                 style={{
-                  height: 2,
-                  top: mobileOpen ? 9 : 14,
+                  top: mobileOpen ? 11 : 17,
                   transform: mobileOpen ? "rotate(-45deg)" : "none",
                 }}
               />
@@ -110,40 +151,36 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="fixed inset-0 top-0 z-50 flex flex-col bg-white text-neutral-700 lg:hidden">
-          <div className="flex h-16 items-center justify-between border-b border-neutral-100 px-6">
-            <Link href="/" onClick={() => setMobileOpen(false)}>
-              <Logo />
-            </Link>
-          </div>
-
-          <div className="flex-1 space-y-1 overflow-y-auto px-6 pt-8">
+        <div className="fixed inset-x-0 top-[72px] z-40 flex h-[calc(100dvh-72px)] flex-col overflow-y-auto bg-white/80 px-8 pb-8 pt-14 text-[#464D59] backdrop-blur-xl lg:hidden">
+          <nav className="flex flex-col gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block border-b border-neutral-100 py-4 text-2xl font-semibold text-neutral-700 transition-colors hover:text-neutral-950"
+                className="text-2xl font-medium leading-[125%] transition-colors hover:text-brand-black"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="border-b border-neutral-100 py-4">
+
+            <div className="text-2xl font-medium leading-[125%]">
               <LanguageSwitcher variant="mobile" />
             </div>
-          </div>
+          </nav>
 
-          <div className="flex flex-col gap-3 px-6 pb-8 pt-4">
-            <Button size="lg" variant="default" className="w-full" asChild>
-              <Link href="#demo" onClick={() => setMobileOpen(false)}>
-                {t("Schedule Demo")}
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="w-full" asChild>
-              <Link href="#kora" onClick={() => setMobileOpen(false)}>
-                {t("Log in")}
-              </Link>
-            </Button>
+          <div className="mt-auto flex flex-col gap-4 px-1 pt-16">
+            <CtaButton href="#demo" onClick={() => setMobileOpen(false)}>
+              {t("Schedule Demo")}
+            </CtaButton>
+
+            <CtaButton
+              href="#kora"
+              variant="secondary"
+              onClick={() => setMobileOpen(false)}
+            >
+              {t("Try for free")}
+            </CtaButton>
           </div>
         </div>
       )}

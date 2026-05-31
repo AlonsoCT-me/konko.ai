@@ -9,13 +9,14 @@ type CtaButtonProps = {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "whatsapp";
   className?: string;
-};
+} & React.ComponentPropsWithoutRef<"a">;
 
 export function CtaButton({
   href,
   children,
   variant = "primary",
   className = "",
+  ...props
 }: CtaButtonProps) {
   const isPrimary = variant === "primary";
   const isWhatsapp = variant === "whatsapp";
@@ -23,6 +24,7 @@ export function CtaButton({
   return (
     <Link
       href={href}
+      {...props}
       className={[
         "inline-flex h-16 items-center justify-between rounded-full transition-transform hover:scale-[1.02]",
         "focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2",
