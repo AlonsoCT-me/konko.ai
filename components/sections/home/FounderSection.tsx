@@ -1,69 +1,61 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export function FounderSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="nosotros" className="bg-brand-off-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <div>
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[rgba(201,168,76,0.2)] px-3 py-1.5 text-sm font-medium text-brand-gold-dark [background-color:rgba(201,168,76,0.1)]">
-              {t('Made with love')}
-            </div>
-            <h2 className="mb-6 text-3xl font-bold leading-tight text-neutral-950 lg:text-4xl">
-              {t('Made with love')}
-            </h2>
-            <div className="space-y-4 text-base leading-relaxed text-neutral-600">
-              <p>{t("At Konko.ai we won't sacrifice your nights and entire weekends trying to make your clinic run better.")}</p>
-              <p>{t('Our mission is to give back time and simplicity to every clinic, so you can focus on what matters most.')}</p>
-            </div>
+    <section
+      id="nosotros"
+      className="relative w-full overflow-hidden border-y border-brand-border bg-white"
+    >
+      <div className="absolute bottom-0 left-0 hidden h-[420px] w-full bg-gradient-to-r from-brand-cream-warm to-brand-gold-vivid opacity-30 [clip-path:polygon(0_0,100%_65%,100%_100%,0_100%)] lg:block" />
 
-            <div className="mt-8 flex items-center gap-4">
-              <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-[rgba(201,168,76,0.2)]">
-                <Image
-                  src="https://images.pexels.com/photos/5207088/pexels-photo-5207088.jpeg?auto=compress&cs=tinysrgb&w=120"
-                  alt="Juan Marc Guglielmi"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-neutral-900">Juan Marc Guglielmi</p>
-                <p className="text-xs text-neutral-500">{t('Co-founder & CEO, Konko.ai')}</p>
-              </div>
-            </div>
+      <div className="relative z-10 mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-8 py-20 md:min-h-[900px] lg:grid-cols-[1fr_480px] lg:px-20 lg:py-28">
+        <div className="max-w-[614px]">
+          <h2 className="relative inline-flex items-start text-[32px] font-semibold leading-[39px] text-brand-black md:text-[48px] md:leading-[58px]">
+            {t("Made with love")}
+            <span className="ml-3 mt-1 inline-block h-9 w-9 animate-pulse bg-[url('/images/heart-svg.svg')] bg-contain bg-center bg-no-repeat md:h-10 md:w-10" />
+          </h2>
+
+          <div className="mt-6 space-y-8 text-[20px] font-normal leading-6 text-neutral-600 md:text-[28px] md:leading-[34px]">
+            <p>
+              {t(
+                "Konko was born after seeing Juliana sacrifice entire nights and weekends to keep her clinic moving forward.",
+              )}
+            </p>
+
+            <p>
+              {t(
+                "Our mission is to give time and freedom back to the people behind every clinic, so they can focus on what truly matters.",
+              )}
+            </p>
           </div>
 
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative h-64 overflow-hidden rounded-3xl">
-                <Image
-                  src="https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt={t('Konko team')}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-              </div>
-              <div className="relative mt-8 h-64 overflow-hidden rounded-3xl">
-                <Image
-                  src="https://images.pexels.com/photos/5207099/pexels-photo-5207099.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt={t('Konko team working')}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-              </div>
-            </div>
-            <div className="absolute -bottom-6 left-1/2 w-56 -translate-x-1/2 rounded-2xl bg-white p-4 text-center shadow-card-lg">
-              <p className="text-3xl font-bold text-neutral-950">2019</p>
-              <p className="mt-1 text-xs text-neutral-500">{t('Founded in Costa Rica')}</p>
-            </div>
+          <div className="mt-14">
+            <p className="text-[20px] font-semibold leading-[27px] text-brand-black">
+              Jean Marc Goguikian
+            </p>
+            <p className="mt-1 text-[20px] font-normal leading-[27px] text-neutral-500">
+              {t("Husband of Dr. Vallejo & CEO of Konko AI")}
+            </p>
           </div>
+        </div>
+
+        <div className="relative mx-auto h-[330px] w-[300px] md:h-[520px] md:w-[470px]">
+          <div className="absolute left-5 top-4 h-[291px] w-[261px] rotate-[-5.93deg] overflow-hidden rounded-lg border-2 border-white shadow-card-lg transition-transform duration-500 hover:rotate-[-8deg] md:h-[481px] md:w-[431px] md:rounded-xl md:border-[3px]" />
+
+          <Image
+            src="/images/jean&julie.png"
+            alt={t("Jean Marc and Juliana")}
+            fill
+            className="absolute z-10 h-[291px] w-[261px] rounded-lg border-2 border-white object-cover shadow-card-xl transition-transform duration-500 hover:scale-[1.02] md:h-[481px] md:w-[431px] md:rounded-xl md:border-[3px]"
+            sizes="(max-width: 768px) 261px, 431px"
+          />
+
+          <div className="absolute -right-1 top-8 h-[291px] w-[261px] rotate-[5deg] overflow-hidden rounded-lg border-2 border-white bg-[url('/images/jean&julie.png')] bg-cover bg-center opacity-80 shadow-card-lg transition-transform duration-500 hover:rotate-[8deg] md:h-[481px] md:w-[431px] md:rounded-xl md:border-[3px]" />
         </div>
       </div>
     </section>

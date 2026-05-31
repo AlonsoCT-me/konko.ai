@@ -43,7 +43,7 @@ export function SecuritySection() {
     <section id="seguridad" className="w-full overflow-hidden">
       <div className="relative w-full overflow-hidden bg-brand-black">
         {/* Background */}
-        <div className="absolute inset-0 bg-[url('/images/bg-security-section.png')] bg-cover bg-center brightness-[0.30] contrast-125 grayscale" />
+        <div className="absolute inset-0 bg-[url('/images/bg-gold-pattern.png')] bg-cover bg-center brightness-[0.30] contrast-125 grayscale" />
 
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-brand-black/40" />

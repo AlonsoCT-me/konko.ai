@@ -9,7 +9,6 @@ import { SecuritySection } from "@/components/sections/home/SecuritySection";
 import { MetaPartnerSection } from "@/components/sections/home/MetaPartnerSection";
 import { FounderSection } from "@/components/sections/home/FounderSection";
 import { MetricsSection } from "@/components/sections/home/MetricsSection";
-import { CTASection } from "@/components/sections/home/CTASection";
 import { LogosCarousel } from "@/components/sections/home/LogosCarousel";
 
 export default function HomePage() {
@@ -27,7 +26,6 @@ export default function HomePage() {
       <MetaPartnerSection />
       <FounderSection />
       <MetricsSection />
-      <CTASection />
     </>
   );
 }

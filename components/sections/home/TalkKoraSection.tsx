@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { CtaButton } from "@/components/shared/buttons";
 
 export function TalkToKoraSection() {
   const { t } = useTranslation();
@@ -20,18 +21,9 @@ export function TalkToKoraSection() {
               {t("Experience firsthand what you can offer your patients")}
             </p>
 
-            <Link
-              href="#demo"
-              className="mt-8 inline-flex h-16 w-[234px] items-center justify-between gap-4 rounded-full bg-brand-black py-1 pl-7 pr-1 text-brand-white transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2"
-            >
-              <span className="flex items-center gap-2 before:block before:h-6 before:w-6 before:bg-[url('/images/whatsapp.svg')] before:bg-contain before:bg-center before:bg-no-repeat">
-                {t("Try Kora")}
-              </span>
-
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-white text-brand-black">
-                <ArrowRight className="size-6" strokeWidth={2.4} />
-              </span>
-            </Link>
+            <CtaButton className="mt-8" href="#demo" variant="whatsapp">
+              {t("Try Kora")}
+            </CtaButton>
           </div>
         </div>
       </div>
