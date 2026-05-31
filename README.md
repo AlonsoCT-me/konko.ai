@@ -33,7 +33,7 @@ AI-powered assistant platform for healthcare clinics across Latin America. Kora 
 
 ## Requirements
 
-- Node.js 20.18+
+- Node.js 21+
 - pnpm 10+
 
 ---
