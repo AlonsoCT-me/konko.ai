@@ -4,6 +4,7 @@
   "private": true,
   "packageManager": "pnpm@10.22.0",
   "scripts": {
+    "predev": "node -e \"const v=process.versions.node.split('.')[0]; if(v<21){console.error('\\n\\x1b[31m[ERROR] Node.js v'+v+' detected. Please switch to Node 21 or 22.\\n        Run: nvm use\\x1b[0m\\n');process.exit(1)}\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

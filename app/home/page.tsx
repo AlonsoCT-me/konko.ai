@@ -1,3 +1,4 @@
+import { SafeSection } from "@/components/shared/SafeSection";
 import { HeroSection } from "@/components/sections/home/HeroSection";
 import { MeetKoraSection } from "@/components/sections/home/MeetKoraSection";
 import { BenefitsSection } from "@/components/sections/home/BenefitsSection";
@@ -14,18 +15,18 @@ import { LogosCarousel } from "@/components/sections/home/LogosCarousel";
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <LogosCarousel />
-      <MeetKoraSection />
-      <BenefitsSection />
-      <AILatamSection />
-      <RevolutionSection />
-      <TalkToKoraSection />
-      <SpecialtiesSection />
-      <SecuritySection />
-      <MetaPartnerSection />
-      <FounderSection />
-      <MetricsSection />
+      <SafeSection><HeroSection /></SafeSection>
+      <SafeSection><LogosCarousel /></SafeSection>
+      <SafeSection><MeetKoraSection /></SafeSection>
+      <SafeSection><BenefitsSection /></SafeSection>
+      <SafeSection><AILatamSection /></SafeSection>
+      <SafeSection><RevolutionSection /></SafeSection>
+      <SafeSection><TalkToKoraSection /></SafeSection>
+      <SafeSection><SpecialtiesSection /></SafeSection>
+      <SafeSection><SecuritySection /></SafeSection>
+      <SafeSection><MetaPartnerSection /></SafeSection>
+      <SafeSection><FounderSection /></SafeSection>
+      <SafeSection><MetricsSection /></SafeSection>
     </>
   );
 }
