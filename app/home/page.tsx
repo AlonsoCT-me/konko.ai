@@ -1,4 +1,5 @@
 import { SafeSection } from "@/components/shared/SafeSection";
+import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { HeroSection } from "@/components/sections/home/HeroSection";
 import { MeetKoraSection } from "@/components/sections/home/MeetKoraSection";
 import { BenefitsSection } from "@/components/sections/home/BenefitsSection";
@@ -17,16 +18,16 @@ export default function HomePage() {
     <>
       <SafeSection><HeroSection /></SafeSection>
       <SafeSection><LogosCarousel /></SafeSection>
-      <SafeSection><MeetKoraSection /></SafeSection>
-      <SafeSection><BenefitsSection /></SafeSection>
-      <SafeSection><AILatamSection /></SafeSection>
-      <SafeSection><RevolutionSection /></SafeSection>
-      <SafeSection><TalkToKoraSection /></SafeSection>
-      <SafeSection><SpecialtiesSection /></SafeSection>
-      <SafeSection><SecuritySection /></SafeSection>
-      <SafeSection><MetaPartnerSection /></SafeSection>
-      <SafeSection><FounderSection /></SafeSection>
-      <SafeSection><MetricsSection /></SafeSection>
+      <SafeSection><ScrollReveal><MeetKoraSection /></ScrollReveal></SafeSection>
+      <SafeSection><ScrollReveal><BenefitsSection /></ScrollReveal></SafeSection>
+      <SafeSection><ScrollReveal><AILatamSection /></ScrollReveal></SafeSection>
+      <SafeSection><ScrollReveal><RevolutionSection /></ScrollReveal></SafeSection>
+      <SafeSection><ScrollReveal><TalkToKoraSection /></ScrollReveal></SafeSection>
+      <SafeSection><ScrollReveal><SpecialtiesSection /></ScrollReveal></SafeSection>
+      <SafeSection><ScrollReveal><SecuritySection /></ScrollReveal></SafeSection>
+      <SafeSection><ScrollReveal><MetaPartnerSection /></ScrollReveal></SafeSection>
+      <SafeSection><ScrollReveal><FounderSection /></ScrollReveal></SafeSection>
+      <SafeSection><ScrollReveal><MetricsSection /></ScrollReveal></SafeSection>
     </>
   );
 }
