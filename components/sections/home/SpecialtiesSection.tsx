@@ -149,7 +149,7 @@ export function SpecialtiesSection() {
       <div
         ref={scrollRef}
         className={[
-          "scrollbar-hide w-full overflow-x-auto overflow-y-hidden overscroll-x-contain px-6 pb-2 lg:px-20",
+          "scrollContent scrollbar-hide w-full overflow-x-auto overflow-y-hidden overscroll-x-contain px-6 pb-2 lg:px-20",
           "touch-pan-x select-none",
           isDragging ? "cursor-grabbing" : "cursor-grab",
         ].join(" ")}

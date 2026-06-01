@@ -9,6 +9,7 @@ interface CarouselProps {
   speed?: number;
   gap?: number;
   pauseOnHover?: boolean;
+  reverse?: boolean;
   className?: string;
 }
 
@@ -17,6 +18,7 @@ export function Carousel({
   speed = 30,
   gap = 64,
   pauseOnHover = true,
+  reverse = false,
   className,
 }: CarouselProps) {
   const [paused, setPaused] = useState(false);
@@ -29,7 +31,10 @@ export function Carousel({
       onMouseLeave={() => pauseOnHover && setPaused(false)}
     >
       <div
-        className="flex w-max animate-marquee items-center will-change-transform"
+        className={cn(
+          "flex w-max items-center will-change-transform",
+          reverse ? "animate-marquee-reverse" : "animate-marquee",
+        )}
         style={{
           animationDuration: `${speed}s`,
           animationPlayState: paused ? "paused" : "running",
