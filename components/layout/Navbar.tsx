@@ -39,9 +39,9 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: t("Cases"), href: "#cases" },
-    { label: t("About Us"), href: "/about-us" },
-    { label: t("Blog"), href: "/blog" },
+    { label: t("Cases"), href: "https://www.konko.ai/#case-studies" },
+    { label: t("About Us"), href: "https://www.konko.ai/about" },
+    { label: t("Blog"), href: "https://www.konko.ai/blog" },
   ];
 
   useEffect(() => {
@@ -118,7 +118,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="relative z-[70] flex size-10 items-center justify-center text-brand-black lg:hidden"
+            className="relative z-[80] flex size-10 items-center justify-center text-brand-black lg:hidden"
             onClick={() => setMobileOpen((value) => !value)}
             aria-label={mobileOpen ? t("Close menu") : t("Open menu")}
             aria-expanded={mobileOpen}
@@ -151,36 +151,38 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[72px] z-40 flex h-[calc(100dvh-72px)] flex-col overflow-y-auto bg-white/80 px-8 pb-8 pt-14 text-[#464D59] backdrop-blur-xl lg:hidden">
-          <nav className="flex flex-col gap-7">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-2xl font-medium leading-[125%] transition-colors hover:text-brand-black"
+        <div className="absolute inset-x-0 top-[72px] z-[60] flex h-[calc(100dvh-72px)] flex-col overflow-hidden bg-white/80 text-[#464D59] backdrop-blur-xl lg:hidden">
+          <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-8 pb-8 pt-14">
+            <nav className="flex flex-col gap-7">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-2xl font-medium leading-[125%] transition-colors hover:text-brand-black"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              <div className="text-2xl font-medium leading-[125%]">
+                <LanguageSwitcher variant="mobile" />
+              </div>
+            </nav>
+
+            <div className="mt-auto flex flex-col gap-4 px-1 pt-16">
+              <CtaButton href="#demo" onClick={() => setMobileOpen(false)}>
+                {t("Schedule Demo")}
+              </CtaButton>
+
+              <CtaButton
+                href="#kora"
+                variant="secondary"
                 onClick={() => setMobileOpen(false)}
               >
-                {link.label}
-              </Link>
-            ))}
-
-            <div className="text-2xl font-medium leading-[125%]">
-              <LanguageSwitcher variant="mobile" />
+                {t("Try for free")}
+              </CtaButton>
             </div>
-          </nav>
-
-          <div className="mt-auto flex flex-col gap-4 px-1 pt-16">
-            <CtaButton href="#demo" onClick={() => setMobileOpen(false)}>
-              {t("Schedule Demo")}
-            </CtaButton>
-
-            <CtaButton
-              href="#kora"
-              variant="secondary"
-              onClick={() => setMobileOpen(false)}
-            >
-              {t("Try for free")}
-            </CtaButton>
           </div>
         </div>
       )}

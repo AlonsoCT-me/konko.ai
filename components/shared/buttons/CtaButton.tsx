@@ -31,9 +31,9 @@ export function CtaButton({
         isPrimary &&
           "border border-brand-gold bg-brand-black py-1 pl-7 pr-1 text-brand-white md:min-w-[220px]",
         variant === "secondary" &&
-          "bg-neutral-100 py-2.5 pl-7 pr-3 text-brand-black md:min-w-[170px]",
+          "bg-neutral-100 py-2.5 pl-7 pr-3 text-brand-black md:min-w-[220px]",
         isWhatsapp &&
-          "bg-brand-black py-1 pl-7 pr-1 text-brand-white md:min-w-[234px]",
+          "w-full bg-brand-black py-1 pl-7 pr-1 text-brand-white md:w-[234px]",
         className,
       ]
         .filter(Boolean)

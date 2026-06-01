@@ -16,7 +16,7 @@
     "reset": "rm -rf node_modules .next pnpm-lock.yaml && pnpm install"
   },
   "engines": {
-    "node": ">=20.18.0",
+    "node": ">=21",
     "pnpm": ">=10"
   },
   "dependencies": {

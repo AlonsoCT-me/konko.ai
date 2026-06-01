@@ -7,7 +7,7 @@ export function AILatamSection() {
 
   return (
     <section className="overflow-hidden bg-neutral-950">
-      <div className="relative mx-auto w-full overflow-hidden bg-[url('/images/bg-IA-section.jpg')] bg-cover bg-center bg-no-repeat px-8 py-20 after:pointer-events-none after:absolute after:bottom-[-80px] after:right-[-120px] after:z-[1] after:h-[520px] after:w-[520px] after:bg-[url('/images/world.svg')] after:bg-contain after:bg-no-repeat after:content-[''] md:min-h-[380px] md:px-10 md:py-0 md:after:bottom-0 md:after:left-auto md:after:right-0 md:after:top-0 md:after:h-[430px] md:after:w-[230px] md:after:translate-y-0 lg:min-h-[400px] lg:px-20">
+      <div className="relative mx-auto w-full overflow-hidden bg-[url('/images/bg-IA-section.jpg')] bg-cover bg-center bg-no-repeat px-8 py-20 after:pointer-events-none after:absolute after:bottom-[-30px] after:right-[-40px] after:z-[1] after:h-[260px] after:w-[160px] after:bg-[url('/images/world.svg')] after:bg-contain after:bg-no-repeat after:content-[''] md:min-h-[380px] md:px-10 md:py-0 md:after:bottom-0 md:after:right-0 md:after:top-0 md:after:h-[430px] md:after:w-[230px] lg:min-h-[400px] lg:px-20">
         {/* overlay oscuro */}
         <div className="absolute inset-0 z-0 bg-neutral-950/15" />
 

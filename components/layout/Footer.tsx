@@ -9,11 +9,11 @@ import { CtaButton } from "@/components/shared/buttons";
 import { Logo } from "@/components/shared/Logo";
 
 const footerLinks = [
-  { label: "Cases", href: "#casos" },
-  { label: "About Us", href: "/about-us" },
-  { label: "Blog", href: "/blog" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Cases", href: "https://www.konko.ai/#case-studies" },
+  { label: "About Us", href: "https://www.konko.ai/about" },
+  { label: "Blog", href: "https://www.konko.ai/blog" },
+  { label: "Terms of Service", href: "https://www.konko.ai/terms" },
+  { label: "Privacy Policy", href: "https://www.konko.ai/privacy-policy" },
 ];
 
 export function Footer() {
@@ -21,7 +21,7 @@ export function Footer() {
 
   return (
     <footer className="relative w-full overflow-hidden bg-brand-black text-brand-white">
-      <div className="absolute inset-0 bg-[url('/images/bg-security-section.png')] bg-cover bg-center brightness-[0.30] contrast-125 grayscale" />
+      <div className="absolute inset-0 bg-[url('/images/bg-gold-pattern.png')] bg-cover bg-center brightness-[0.30] contrast-125 grayscale" />
       <div className="absolute inset-0 bg-brand-black/40" />
 
       <div className="relative z-10 mx-auto flex min-h-[900px] max-w-7xl flex-col justify-between px-8 py-20 lg:px-20 lg:py-24">

@@ -27,24 +27,69 @@ export function MeetKoraSection() {
   const { t } = useTranslation();
 
   const features = [
-    { tag: t("Scheduling"), title: t("Convert more messages into scheduled appointments"), description: t("Don't lose patients by not responding in time. Kora replies instantly on WhatsApp and automatically schedules appointments."), ...featureBgs[0], image: featureImages[0] },
-    { tag: t("Loyalty"), title: t("Build patient loyalty with the best care"), description: t("Kora remembers every detail, sends personalized reminders, and follows up post-consultation automatically."), ...featureBgs[1], image: featureImages[1] },
-    { tag: t("Efficiency"), title: t("Free your team from operational chaos"), description: t("Your staff stops answering repetitive WhatsApps and focuses on what matters most: the patient in front of them."), ...featureBgs[2], image: featureImages[2] },
-    { tag: t("Analytics"), title: t("Gain full visibility and control"), description: t("Real-time dashboard of all your consultations and conversations. Make better decisions every day."), ...featureBgs[3], image: featureImages[3] },
-    { tag: t("Implementation"), title: t("Ready in days and improving every day"), description: t("Onboarding in less than 48 hours. Kora learns about your clinic and continuously improves with each conversation."), ...featureBgs[4], image: featureImages[4] },
+    {
+      tag: t("Scheduling"),
+      title: t("Convert more messages into scheduled appointments"),
+      description: t(
+        "Don't lose patients by not responding in time. Kora replies instantly on WhatsApp and automatically schedules appointments.",
+      ),
+      ...featureBgs[0],
+      image: featureImages[0],
+    },
+    {
+      tag: t("Loyalty"),
+      title: t("Build patient loyalty with the best care"),
+      description: t(
+        "Kora remembers every detail, sends personalized reminders, and follows up post-consultation automatically.",
+      ),
+      ...featureBgs[1],
+      image: featureImages[1],
+    },
+    {
+      tag: t("Efficiency"),
+      title: t("Free your team from operational chaos"),
+      description: t(
+        "Your staff stops answering repetitive WhatsApps and focuses on what matters most: the patient in front of them.",
+      ),
+      ...featureBgs[2],
+      image: featureImages[2],
+    },
+    {
+      tag: t("Analytics"),
+      title: t("Gain full visibility and control"),
+      description: t(
+        "Real-time dashboard of all your consultations and conversations. Make better decisions every day.",
+      ),
+      ...featureBgs[3],
+      image: featureImages[3],
+    },
+    {
+      tag: t("Implementation"),
+      title: t("Ready in days and improving every day"),
+      description: t(
+        "Onboarding in less than 48 hours. Kora learns about your clinic and continuously improves with each conversation.",
+      ),
+      ...featureBgs[4],
+      image: featureImages[4],
+    },
   ];
 
   return (
-    <section id="caracteristicas" className="bg-white py-20 lg:py-28">
+    <section id="caracteristicas" className="bg-white py-10 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <h2 className="text-3xl font-bold leading-tight text-neutral-950 lg:text-5xl">
             {t("Meet Kora")}
           </h2>
           <p className="mt-4 max-w-xl text-lg text-neutral-500">
-            {t("The new AI assistant that will help you transform your clinic with technology from the best in the world.")}
+            {t(
+              "The new AI assistant that will help you transform your clinic with technology from the best in the world.",
+            )}
           </p>
-          <Link href="#demo" className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-neutral-950 transition-colors hover:text-brand-gold">
+          <Link
+            href="#demo"
+            className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-neutral-950 transition-colors hover:text-brand-gold"
+          >
             {t("Try Kora")}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
