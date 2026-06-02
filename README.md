@@ -1,4 +1,4 @@
-# konko.ai
+# konko.ai //
 
 AI-powered assistant platform for healthcare clinics across Latin America. Kora handles patient scheduling, follow-ups, and communication via WhatsApp — so clinic staff can focus on care.
 
