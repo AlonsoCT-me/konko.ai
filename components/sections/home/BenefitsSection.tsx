@@ -28,7 +28,7 @@ export function BenefitsSection() {
             <div className="relative z-10 mx-6 mb-6 flex flex-1 items-center justify-center overflow-hidden rounded-2xl">
               <div className="relative h-full w-full max-w-[400px]">
                 <Image
-                  src="/images/datepicker.png"
+                  src="/images/datepicker.svg"
                   alt="Appointment calendar"
                   fill
                   className="object-contain object-center p-4"
@@ -58,7 +58,7 @@ export function BenefitsSection() {
             >
               <div className="align-start relative flex h-full w-full max-w-[290px]">
                 <Image
-                  src="/images/mensaje.png"
+                  src="/images/mensaje-loyalty.png"
                   alt="Patient messages"
                   fill
                   className="object-contain object-center"
@@ -87,7 +87,7 @@ export function BenefitsSection() {
             >
               <div className="relative flex h-full w-full max-w-[300px] items-start">
                 <Image
-                  src="/images/steps.png"
+                  src="/images/steps.svg"
                   alt="Automated care flow"
                   width={300}
                   height={500}
@@ -113,12 +113,12 @@ export function BenefitsSection() {
             </div>
 
             <div className="relative z-10 mx-6 mb-6 flex flex-1 justify-center overflow-hidden rounded-2xl">
-              <div className="relative flex h-full w-full max-w-[400px] justify-center">
+              <div className="relative flex h-full w-full max-w-[520px] justify-center">
                 <Image
-                  src="/images/mensaje-wa.png"
+                  src="/images/analytics.svg"
                   alt="WhatsApp patient message"
                   fill
-                  className="object-contain object-center p-4"
+                  className="object-contain object-center"
                   sizes="(max-width: 1024px) 100vw, 58vw"
                 />
               </div>
@@ -140,15 +140,15 @@ export function BenefitsSection() {
             </div>
 
             <div
-              className="relative z-10 mx-6 mb-6 flex-1 overflow-hidden rounded-[32px]"
+              className="relative z-10 mx-4 mb-6 flex-1 overflow-hidden"
               style={{ minHeight: 240 }}
             >
-              <div className="relative h-full w-full max-w-[320px]">
+              <div className="relative h-full w-full">
                 <Image
-                  src="/images/graphic.png"
+                  src="/images/rendimiento.svg"
                   alt="Growth analytics chart"
                   fill
-                  className="object-contain object-bottom p-4"
+                  className="object-contain object-center scale-[1.3]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>

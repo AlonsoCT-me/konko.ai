@@ -59,13 +59,13 @@ export function LogosCarousel() {
   const items = logos.map((logo) => <LogoItem key={logo.src} logo={logo} />);
 
   return (
-    <section className="overflow-hidden border-y border-neutral-100 bg-white py-10">
+    <section className="overflow-hidden border-y border-neutral-100 bg-[#F8F9FB] py-10">
       <div className="mx-auto mb-8 max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-medium text-neutral-400">
           {t("Hundreds of clinics already trust us")}
         </p>
       </div>
-      <Carousel items={items} speed={35} gap={56} pauseOnHover />
+      <Carousel items={items} speed={35} gap={56} pauseOnHover fadeColor="#F8F9FB" />
     </section>
   );
 }

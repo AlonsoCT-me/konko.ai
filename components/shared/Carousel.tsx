@@ -11,6 +11,7 @@ interface CarouselProps {
   pauseOnHover?: boolean;
   reverse?: boolean;
   className?: string;
+  fadeColor?: string;
 }
 
 export function Carousel({
@@ -20,6 +21,7 @@ export function Carousel({
   pauseOnHover = true,
   reverse = false,
   className,
+  fadeColor = "white",
 }: CarouselProps) {
   const [paused, setPaused] = useState(false);
   const doubled = [...items, ...items];
@@ -47,8 +49,8 @@ export function Carousel({
         ))}
       </div>
 
-      <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-24 [background:linear-gradient(to_right,white,transparent)]" />
-      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-24 [background:linear-gradient(to_left,white,transparent)]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-24" style={{ background: `linear-gradient(to right, ${fadeColor}, transparent)` }} />
+      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-24" style={{ background: `linear-gradient(to left, ${fadeColor}, transparent)` }} />
     </div>
   );
 }

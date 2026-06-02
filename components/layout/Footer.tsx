@@ -2,19 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+
+import {
+  FOOTER_LINKS,
+  DEMO_URL,
+  WHATSAPP_URL,
+  CTA_LABELS,
+} from "@/constants/navigation";
+
 import { CtaButton } from "@/components/shared/buttons";
-
 import { Logo } from "@/components/shared/Logo";
-
-const footerLinks = [
-  { label: "Cases", href: "https://www.konko.ai/#case-studies" },
-  { label: "About Us", href: "https://www.konko.ai/about" },
-  { label: "Blog", href: "https://www.konko.ai/blog" },
-  { label: "Terms of Service", href: "https://www.konko.ai/terms" },
-  { label: "Privacy Policy", href: "https://www.konko.ai/privacy-policy" },
-];
 
 export function Footer() {
   const { t } = useTranslation();
@@ -35,10 +33,10 @@ export function Footer() {
           </h2>
 
           <div className="mt-14 flex flex-col gap-4 md:mt-16 md:flex-row md:gap-3">
-            <CtaButton href="#demo">{t("Schedule Demo")}</CtaButton>
+            <CtaButton href={DEMO_URL}>{t(CTA_LABELS.demo)}</CtaButton>
 
-            <CtaButton href="#kora" variant="secondary">
-              {t("Try for free")}
+            <CtaButton href={WHATSAPP_URL} variant="secondary">
+              {t(CTA_LABELS.koraFree)}
             </CtaButton>
           </div>
         </section>
@@ -47,7 +45,7 @@ export function Footer() {
           <Logo variant="light" className="h-9 w-auto" />
 
           <nav className="mt-8 flex max-w-[620px] flex-wrap gap-x-14 gap-y-6 md:items-center md:gap-x-7">
-            {footerLinks.map((link) => (
+            {FOOTER_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -67,6 +65,7 @@ export function Footer() {
               className="size-5"
               aria-hidden="true"
             />
+
             <span className="text-sm font-normal leading-4 text-brand-white">
               {t("English")}
             </span>

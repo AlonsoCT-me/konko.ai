@@ -55,7 +55,6 @@ export function FounderSection() {
             sizes="(max-width: 768px) 261px, 431px"
           />
 
-          <div className="absolute -right-1 top-8 h-[291px] w-[261px] rotate-[5deg] overflow-hidden rounded-lg border-2 border-white bg-[url('/images/jean&julie.png')] bg-cover bg-center opacity-80 shadow-card-lg transition-transform duration-500 hover:rotate-[8deg] md:h-[481px] md:w-[431px] md:rounded-xl md:border-[3px]" />
         </div>
       </div>
     </section>
