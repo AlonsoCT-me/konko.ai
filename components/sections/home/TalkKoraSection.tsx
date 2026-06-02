@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { CtaButton } from "@/components/shared/buttons";
+import { WHATSAPP_URL } from "@/constants/navigation";
 
 export function TalkToKoraSection() {
   const { t } = useTranslation();
@@ -21,7 +20,7 @@ export function TalkToKoraSection() {
               {t("Experience firsthand what you can offer your patients")}
             </p>
 
-            <CtaButton className="mt-8" href="#demo" variant="whatsapp">
+            <CtaButton className="mt-8" href={WHATSAPP_URL} variant="whatsapp">
               {t("Try Kora")}
             </CtaButton>
           </div>

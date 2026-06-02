@@ -4,6 +4,7 @@
   "private": true,
   "packageManager": "pnpm@10.22.0",
   "scripts": {
+    "predev": "node -e \"const v=process.versions.node.split('.')[0]; if(v<21){console.error('\\n\\x1b[31m[ERROR] Node.js v'+v+' detected. Please switch to Node 21 or 22.\\n        Run: nvm use\\x1b[0m\\n');process.exit(1)}\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -40,7 +41,7 @@
     "i18next": "^24.0.0",
     "lucide-react": "^0.446.0",
     "next": "^15.5.0",
-    "postcss": "8.5.6",
+    "postcss": "8.5.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.53.0",
@@ -49,6 +50,11 @@
     "tailwindcss": "3.4.17",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss": ">=8.5.10"
+    }
   },
   "devDependencies": {
     "@types/node": "25.9.1",

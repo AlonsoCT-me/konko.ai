@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { AboutHero } from '@/components/sections/about-us/AboutHero';
 import { AboutMission } from '@/components/sections/about-us/AboutMission';
 import { AboutValues } from '@/components/sections/about-us/AboutValues';
@@ -25,11 +26,11 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
-      <AboutMission />
-      <AboutValues />
-      <AboutTeam />
-      <AboutCulture />
-      <AboutCTA />
+      <ScrollReveal><AboutMission /></ScrollReveal>
+      <ScrollReveal><AboutValues /></ScrollReveal>
+      <ScrollReveal><AboutTeam /></ScrollReveal>
+      <ScrollReveal><AboutCulture /></ScrollReveal>
+      <ScrollReveal><AboutCTA /></ScrollReveal>
     </>
   );
 }

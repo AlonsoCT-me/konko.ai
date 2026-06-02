@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { CtaButton } from "@/components/shared/buttons";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 import { Logo } from "@/components/shared/Logo";
+import { DEMO_URL, NAV_LINKS, WHATSAPP_URL } from "@/constants/navigation";
 
 function NavbarButton({
   href,
@@ -38,11 +39,10 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navLinks = [
-    { label: t("Cases"), href: "https://www.konko.ai/#case-studies" },
-    { label: t("About Us"), href: "https://www.konko.ai/about" },
-    { label: t("Blog"), href: "https://www.konko.ai/blog" },
-  ];
+  const navLinks = NAV_LINKS.map((link) => ({
+    ...link,
+    label: t(link.label),
+  }));
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 16);
@@ -63,23 +63,16 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed left-0 right-0 top-0 z-50 border-b border-brand-border transition-all duration-300",
+        "fixed left-0 right-0 top-0 z-50 border-b border-brand-border transition-all duration-300 lg:border-b-0 lg:border-transparent",
         mobileOpen
           ? "bg-white/80 backdrop-blur-xl"
           : scrolled
-            ? "bg-white/50 backdrop-blur-md"
-            : "bg-white/50 backdrop-blur-0",
+            ? "bg-white/50 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none"
+            : "bg-transparent backdrop-blur-0",
       )}
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
-        <nav
-          className={cn(
-            "flex h-[72px] items-center justify-between transition-all duration-300 lg:my-4 lg:h-[68px] lg:px-5",
-            scrolled &&
-              !mobileOpen &&
-              "lg:rounded-[20px] lg:bg-neutral-100/50 lg:backdrop-blur-md",
-          )}
-        >
+        <nav className="flex h-[72px] items-center justify-between transition-all duration-300 lg:my-4 lg:h-[68px] lg:rounded-[20px] lg:bg-neutral-100/50 lg:px-5 lg:backdrop-blur-md">
           <div className="flex items-center gap-14 lg:gap-16">
             <Link
               href="/"
@@ -109,11 +102,11 @@ export function Navbar() {
               <LanguageSwitcher variant="desktop" />
             </div>
 
-            <NavbarButton href="#kora" variant="secondary">
+            <NavbarButton href={WHATSAPP_URL} variant="secondary">
               {t("Try Kora")}
             </NavbarButton>
 
-            <NavbarButton href="#demo">{t("Schedule Demo")}</NavbarButton>
+            <NavbarButton href={DEMO_URL}>{t("Schedule Demo")}</NavbarButton>
           </div>
 
           <button
@@ -131,6 +124,7 @@ export function Navbar() {
                   transform: mobileOpen ? "rotate(45deg)" : "none",
                 }}
               />
+
               <span
                 className="absolute left-0 top-[11px] block h-0.5 w-6 rounded-full bg-current transition-all duration-300"
                 style={{
@@ -138,6 +132,7 @@ export function Navbar() {
                   transform: mobileOpen ? "scaleX(0)" : "none",
                 }}
               />
+
               <span
                 className="absolute left-0 block h-0.5 w-6 rounded-full bg-current transition-all duration-300"
                 style={{
@@ -171,12 +166,12 @@ export function Navbar() {
             </nav>
 
             <div className="mt-auto flex flex-col gap-4 px-1 pt-16">
-              <CtaButton href="#demo" onClick={() => setMobileOpen(false)}>
+              <CtaButton href={DEMO_URL} onClick={() => setMobileOpen(false)}>
                 {t("Schedule Demo")}
               </CtaButton>
 
               <CtaButton
-                href="#kora"
+                href={WHATSAPP_URL}
                 variant="secondary"
                 onClick={() => setMobileOpen(false)}
               >

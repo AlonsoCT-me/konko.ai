@@ -17,7 +17,7 @@ export function TrustedBySection() {
   const doubled = [...clinics, ...clinics];
 
   return (
-    <section className="overflow-hidden border-y border-neutral-100 bg-white py-10">
+    <section className="overflow-hidden border-y border-neutral-100 bg-[#F8F9FB] py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="mb-8 text-center text-sm font-medium text-neutral-400">
           {t('Hundreds of clinics already trust us')}
@@ -34,8 +34,8 @@ export function TrustedBySection() {
             </div>
           ))}
         </div>
-        <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-20 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-20 bg-gradient-to-l from-white to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-20 bg-gradient-to-r from-[#F8F9FB] to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-20 bg-gradient-to-l from-[#F8F9FB] to-transparent" />
       </div>
     </section>
   );

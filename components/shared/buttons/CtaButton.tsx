@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 type CtaButtonProps = {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "whatsapp";
+  variant?: "primary" | "secondary" | "whatsapp" | "text";
   className?: string;
 } & React.ComponentPropsWithoutRef<"a">;
 
@@ -20,6 +20,26 @@ export function CtaButton({
 }: CtaButtonProps) {
   const isPrimary = variant === "primary";
   const isWhatsapp = variant === "whatsapp";
+  const isText = variant === "text";
+
+  if (isText) {
+    return (
+      <Link
+        href={href}
+        {...props}
+        className={[
+          "group inline-flex items-center gap-2 text-sm font-semibold text-neutral-950 transition-colors hover:text-brand-gold",
+          className,
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        {children}
+
+        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+      </Link>
+    );
+  }
 
   return (
     <Link

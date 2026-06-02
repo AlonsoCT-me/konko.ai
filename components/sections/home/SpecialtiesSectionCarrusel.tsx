@@ -29,12 +29,22 @@ const specialties: { key: string; image: string; href?: string }[] = [
   { key: "Allergology", image: "alergologia.png" },
 ];
 
-function SpecialtyCard({ name, image, href }: { name: string; image: string; href?: string }) {
+function SpecialtyCard({
+  name,
+  image,
+  href,
+}: {
+  name: string;
+  image: string;
+  href?: string;
+}) {
   const content = (
-    <article className={[
-      "relative h-[190px] w-[190px] shrink-0 overflow-hidden rounded-lg transition-transform duration-300 hover:scale-[1.04]",
-      href ? "cursor-pointer" : "",
-    ].join(" ")}>
+    <article
+      className={[
+        "relative h-[190px] w-[190px] shrink-0 overflow-hidden rounded-lg transition-transform duration-300 hover:scale-[1.04]",
+        href ? "cursor-pointer" : "",
+      ].join(" ")}
+    >
       <Image
         src={`/images/${image}`}
         alt={name}
@@ -95,7 +105,6 @@ export function SpecialtiesSection() {
           ))}
           gap={13}
           speed={40}
-          reverse
         />
       </div>
     </section>
