@@ -1,9 +1,16 @@
 'use client';
 
+<<<<<<< HEAD
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+=======
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+>>>>>>> d2fa808 (update mobile cards seciruty section)
 
 import { Carousel } from '@/components/shared/Carousel';
 
@@ -68,7 +75,11 @@ function SpecialtyCard({
 
 export function SpecialtiesSection() {
   const { t } = useTranslation();
+<<<<<<< HEAD
   const [paused, setPaused] = useState(false);
+=======
+  const [carouselsPaused, setCarouselsPaused] = useState(false);
+>>>>>>> d2fa808 (update mobile cards seciruty section)
 
   const firstRow = specialties.slice(0, 10);
   const secondRow = specialties.slice(10);
@@ -105,8 +116,14 @@ export function SpecialtiesSection() {
           ))}
           gap={13}
           speed={40}
+<<<<<<< HEAD
           pauseOnHover={false}
           isPaused={paused}
+=======
+          sharedPaused={carouselsPaused}
+          onSharedPauseChange={setCarouselsPaused}
+          pauseGroupOnHover
+>>>>>>> d2fa808 (update mobile cards seciruty section)
         />
 
         <Carousel
@@ -115,8 +132,14 @@ export function SpecialtiesSection() {
           ))}
           gap={13}
           speed={40}
+<<<<<<< HEAD
           pauseOnHover={false}
           isPaused={paused}
+=======
+          sharedPaused={carouselsPaused}
+          onSharedPauseChange={setCarouselsPaused}
+          pauseGroupOnHover
+>>>>>>> d2fa808 (update mobile cards seciruty section)
         />
       </div>
     </section>
