@@ -126,9 +126,9 @@ export function MetricsSection() {
           </p>
         </div>
 
-        <div className="mb-20 mt-20 grid max-w-[620px] grid-cols-1 gap-y-10 md:mb-24 md:mt-24 md:grid-cols-2 md:gap-x-20 md:gap-y-8">
+        <div className="mb-10 mt-10 grid max-w-[620px] grid-cols-1 gap-y-10 md:mb-24 md:mt-24 md:grid-cols-2 md:gap-x-20 md:gap-y-8">
           {stats.map((stat, index) => (
-            <div key={stat.label} className="flex items-center gap-8">
+            <div key={stat.label} className="flex items-center md:gap-8">
               <span className="bg-brand-granade h-12 w-[3px] shrink-0" />
 
               <div>
