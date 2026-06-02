@@ -80,7 +80,10 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="shrink-0"
             >
-              <Logo className="h-9 w-auto" />
+              <Logo
+                variant={!scrolled && !mobileOpen ? "light" : "dark"}
+                className="h-9 w-auto transition-all duration-300"
+              />
             </Link>
 
             <ul className="hidden items-center gap-10 lg:flex">
@@ -111,7 +114,10 @@ export function Navbar() {
 
           <button
             type="button"
-            className="relative z-[80] flex size-10 items-center justify-center text-brand-black lg:hidden"
+            className={cn(
+              "relative z-[80] flex size-10 items-center justify-center transition-colors duration-300 lg:hidden",
+              !scrolled && !mobileOpen ? "text-white" : "text-brand-black",
+            )}
             onClick={() => setMobileOpen((value) => !value)}
             aria-label={mobileOpen ? t("Close menu") : t("Open menu")}
             aria-expanded={mobileOpen}
