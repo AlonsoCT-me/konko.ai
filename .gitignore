@@ -10,6 +10,8 @@
 .npm
 .yarn
 .yarn-cache
+package-lock.json
+yarn.lock
 
 # testing
 /coverage
