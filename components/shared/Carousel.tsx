@@ -10,6 +10,9 @@ interface CarouselProps {
   gap?: number;
   pauseOnHover?: boolean;
   isPaused?: boolean;
+  pauseGroupOnHover?: boolean;
+  sharedPaused?: boolean;
+  onSharedPauseChange?: (paused: boolean) => void;
   reverse?: boolean;
   className?: string;
   fadeColor?: string;
@@ -22,6 +25,9 @@ export function Carousel({
   gap = 64,
   pauseOnHover = true,
   isPaused = false,
+  pauseGroupOnHover = false,
+  sharedPaused = false,
+  onSharedPauseChange,
   reverse = false,
   className,
   fadeColor = "white",
@@ -31,6 +37,9 @@ export function Carousel({
   const tapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const doubled = [...items, ...items];
 
+  const effectivePaused =
+    paused || isPaused || (pauseGroupOnHover && sharedPaused);
+
   useEffect(
     () => () => {
       if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
@@ -38,17 +47,40 @@ export function Carousel({
     [],
   );
 
+  function setCarouselPaused(value: boolean) {
+    if (pauseGroupOnHover) {
+      onSharedPauseChange?.(value);
+      return;
+    }
+
+    setPaused(value);
+  }
+
+  function handleMouseEnter() {
+    if (!pauseOnHover) return;
+    setCarouselPaused(true);
+  }
+
+  function handleMouseLeave() {
+    if (!pauseOnHover) return;
+    setCarouselPaused(false);
+  }
+
   function handleTouchStart() {
     if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
-    setPaused(true);
-    tapTimerRef.current = setTimeout(() => setPaused(false), tapPauseDuration);
+
+    setCarouselPaused(true);
+
+    tapTimerRef.current = setTimeout(() => {
+      setCarouselPaused(false);
+    }, tapPauseDuration);
   }
 
   return (
     <div
       className={cn("relative overflow-hidden", className)}
-      onMouseEnter={() => pauseOnHover && setPaused(true)}
-      onMouseLeave={() => pauseOnHover && setPaused(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
     >
       <div
@@ -58,7 +90,7 @@ export function Carousel({
         )}
         style={{
           animationDuration: `${speed}s`,
-          animationPlayState: paused || isPaused ? "paused" : "running",
+          animationPlayState: effectivePaused ? "paused" : "running",
         }}
       >
         {doubled.map((item, i) => (

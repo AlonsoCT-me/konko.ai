@@ -75,7 +75,9 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = document.querySelectorAll("[data-navbar-theme], [data-navbar-glass], [data-navbar-hero]");
+    const sections = document.querySelectorAll(
+      "[data-navbar-theme], [data-navbar-glass], [data-navbar-hero]",
+    );
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -126,9 +128,9 @@ export function Navbar() {
             "flex h-[72px] items-center justify-between transition-all duration-500 lg:my-4 lg:h-[68px] lg:px-5",
             scrolled && showGlass
               ? isDark
-                ? "lg:rounded-[20px] lg:bg-white/10 lg:backdrop-blur-xl lg:border lg:border-white/10"
-                : "lg:rounded-[20px] lg:bg-white/70 lg:backdrop-blur-xl lg:border lg:border-white/20"
-              : "lg:rounded-[20px] lg:bg-transparent lg:border lg:border-transparent",
+                ? "lg:rounded-[20px] lg:border lg:border-white/10 lg:bg-white/10 lg:backdrop-blur-xl"
+                : "lg:rounded-[20px] lg:border lg:border-white/20 lg:bg-white/70 lg:backdrop-blur-xl"
+              : "lg:rounded-[20px] lg:border lg:border-transparent lg:bg-transparent",
           )}
         >
           <div className="flex items-center gap-6">
@@ -139,7 +141,11 @@ export function Navbar() {
               className="shrink-0 pr-2.5"
             >
               <Logo
-                variant={isDark && !mobileOpen && !(isMobile && scrolled && isHero) ? "light" : "dark"}
+                variant={
+                  isDark && !mobileOpen && !(isMobile && scrolled && isHero)
+                    ? "light"
+                    : "dark"
+                }
                 className="h-9 w-auto transition-all duration-300"
               />
             </Link>
@@ -183,14 +189,18 @@ export function Navbar() {
               {t("Try Kora")}
             </NavbarButton>
 
-            <NavbarButton href={DEMO_URL} className="ml-3">{t("Schedule Demo")}</NavbarButton>
+            <NavbarButton href={DEMO_URL} className="ml-3">
+              {t("Schedule Demo")}
+            </NavbarButton>
           </div>
 
           <button
             type="button"
             className={cn(
               "relative z-[80] flex size-10 items-center justify-center transition-colors duration-300 lg:hidden",
-              isDark && !mobileOpen && !(scrolled && isHero) ? "text-white" : "text-brand-black",
+              isDark && !mobileOpen && !(scrolled && isHero)
+                ? "text-white"
+                : "text-brand-black",
             )}
             onClick={() => setMobileOpen((value) => !value)}
             aria-label={mobileOpen ? t("Close menu") : t("Open menu")}
@@ -226,7 +236,7 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="absolute inset-x-0 top-[72px] z-[60] flex h-[calc(100dvh-72px)] flex-col overflow-hidden bg-white/80 text-[#464D59] backdrop-blur-xl lg:hidden">
+        <div className="absolute inset-x-0 top-[72px] z-[60] flex h-[calc(100dvh-72px)] flex-col overflow-hidden bg-white/10 text-[#464D59] backdrop-blur-xl lg:hidden">
           <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-8 pb-8 pt-14">
             <nav className="flex flex-col gap-7">
               {navLinks.map((link) => (

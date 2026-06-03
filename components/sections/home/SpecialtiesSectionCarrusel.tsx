@@ -76,11 +76,11 @@ export function SpecialtiesSection() {
     <section
       id="especialidades"
       data-navbar-theme="light"
-      className="w-full overflow-hidden bg-white py-20 lg:py-28"
+      className="w-full overflow-hidden bg-white py-20 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
         <div className="mb-14 max-w-[860px] lg:mb-20">
-          <h2 className="text-[44px] font-semibold leading-[52px] text-brand-black md:text-[48px] md:leading-[58px]">
+          <h2 className="text-4xl font-bold leading-tight tracking-[-0.03em] text-brand-black lg:text-5xl">
             {t("Designed for your")}{" "}
             <span className="gold-underline">{t("specialty")}</span>
           </h2>
@@ -104,8 +104,9 @@ export function SpecialtiesSection() {
           ))}
           gap={13}
           speed={40}
-          pauseOnHover={false}
-          isPaused={paused}
+          sharedPaused={paused}
+          onSharedPauseChange={setPaused}
+          pauseGroupOnHover
         />
 
         <Carousel
@@ -114,8 +115,9 @@ export function SpecialtiesSection() {
           ))}
           gap={13}
           speed={40}
-          pauseOnHover={false}
-          isPaused={paused}
+          sharedPaused={paused}
+          onSharedPauseChange={setPaused}
+          pauseGroupOnHover
         />
       </div>
     </section>

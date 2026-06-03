@@ -41,16 +41,18 @@ export function RevolutionSection() {
   const hasMultipleTestimonials = testimonials.length > 1;
 
   return (
-    <section data-navbar-theme="light" className="relative overflow-hidden bg-white py-20 lg:py-28">
+    <section
+      data-navbar-theme="light"
+      className="relative overflow-hidden bg-white py-20 lg:py-28"
+    >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#DED9C8_1.2px,transparent_1.2px)] opacity-70 [background-size:28px_28px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 lg:mb-12">
-          <h2 className="relative inline-block max-w-[780px] text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-neutral-950 md:text-[48px] lg:text-[48px]">
+          <h2 className="relative inline-block max-w-[780px] text-4xl text-[40px] font-bold leading-tight tracking-[-0.03em] text-neutral-950 lg:text-5xl">
             {t("The healthcare revolution in Latam")}
             <span className="absolute -bottom-2 left-[60px] hidden h-[10px] w-[240px] bg-[url('/images/gold-underline.svg')] bg-contain bg-no-repeat md:block" />
           </h2>
-
           <p className="mt-4 text-[24px] leading-tight tracking-[-0.03em] text-neutral-500 md:text-[28px]">
             {t("Told by its true protagonists")}
           </p>

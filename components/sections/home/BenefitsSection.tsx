@@ -8,12 +8,12 @@ export function BenefitsSection() {
   const { t } = useTranslation();
 
   return (
-    <section data-navbar-theme="light" className="bg-neutral py-20 lg:py-28">
+    <section data-navbar-theme="light" className="bg-neutral py-10 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-5 md:grid-cols-12">
           {/* Card 1 */}
           <div className="relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-[#ffff] after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(135deg,#FFD255_0%,#EDE4D0_100%)] after:opacity-30 after:content-[''] after:[clip-path:polygon(0_35%,100%_72%,100%_100%,0_100%)] md:col-span-6 md:h-[660px]">
-            <div className="relative z-10 p-9">
+            <div className="relative z-10 p-6">
               <h3 className="card-title">
                 {t("Convert more messages into scheduled appointments")}
               </h3>
@@ -25,7 +25,7 @@ export function BenefitsSection() {
               </p>
             </div>
 
-            <div className="relative z-10 mx-6 mb-6 flex flex-1 items-center justify-center overflow-hidden rounded-2xl">
+            <div className="relative z-10 mx-4 mb-6 flex flex-1 items-center justify-center overflow-hidden rounded-2xl">
               <div className="relative h-full w-full max-w-[400px]">
                 <Image
                   src="/images/datepicker.svg"
@@ -40,7 +40,7 @@ export function BenefitsSection() {
 
           {/* Card 2 */}
           <div className="relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-[linear-gradient(to_bottom,#ffff_0%,#ffff_48%,#ffff_48%,#F8EFCF_100%)] before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.45),transparent_42%)] before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(180deg,transparent_0%,rgba(255,255,255,0.18)_100%)] after:content-[''] md:col-span-6 md:h-[660px]">
-            <div className="relative z-10 p-9">
+            <div className="relative z-10 p-6">
               <h3 className="card-title">
                 {t("Build patient loyalty with the best care")}
               </h3>
@@ -53,7 +53,7 @@ export function BenefitsSection() {
             </div>
 
             <div
-              className="relative z-10 mx-6 mb-6 flex flex-1 items-center justify-center overflow-hidden rounded-[32px]"
+              className="relative z-10 mx-4 mb-6 flex flex-1 items-center justify-center overflow-hidden rounded-[32px]"
               style={{ minHeight: 240 }}
             >
               <div className="align-start relative flex h-full w-full max-w-[290px]">
@@ -69,7 +69,7 @@ export function BenefitsSection() {
           </div>
           {/* Card 3 */}
           <div className="relative flex min-h-[400px] flex-col overflow-hidden rounded-xl border border-brand-border bg-[linear-gradient(to_bottom,#ffff_0%,#ffff_55%,#F8EFCF_100%)] md:col-span-12 lg:min-h-[400px] lg:flex-row lg:bg-[linear-gradient(to_bottom,#ffff_0%,#ffff_58%,#F8EFCF_100%)]">
-            <div className="relative z-10 p-9 pb-4 lg:flex lg:w-5/12 lg:flex-col lg:justify-start">
+            <div className="relative z-10 p-6 pb-4 lg:flex lg:w-5/12 lg:flex-col lg:justify-start">
               <h3 className="card-title">
                 {t("Free your team from operational chaos")}
               </h3>
@@ -100,7 +100,7 @@ export function BenefitsSection() {
 
           {/* Card 4 */}
           <div className="relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-white after:pointer-events-none after:absolute after:left-0 after:top-0 after:h-[105%] after:w-full after:rotate-[0deg] after:scale-105 after:bg-[url('/images/vector-circle.svg')] after:bg-[length:120%] after:bg-[position:-80%_-60%] after:bg-no-repeat after:opacity-75 after:content-[''] md:col-span-8 md:h-[660px]">
-            <div className="relative z-10 p-9">
+            <div className="relative z-10 p-6">
               <h3 className="card-title">
                 {t("Gain full visibility and control")}
               </h3>
@@ -112,7 +112,7 @@ export function BenefitsSection() {
               </p>
             </div>
 
-            <div className="relative z-10 mx-6 mb-6 flex flex-1 justify-center overflow-hidden rounded-2xl">
+            <div className="relative z-10 mx-4 mb-6 flex flex-1 justify-center overflow-hidden rounded-2xl">
               <div className="relative flex h-full w-full max-w-[520px] justify-center">
                 <Image
                   src="/images/analytics.svg"
@@ -127,7 +127,7 @@ export function BenefitsSection() {
 
           {/* Card 5 */}
           <div className="cardB relative flex h-[558px] flex-col overflow-hidden rounded-xl border border-brand-border bg-[#ffff] after:pointer-events-none after:absolute after:left-0 after:top-0 after:h-full after:w-full after:rotate-[0deg] after:scale-105 after:bg-[url('/images/vector-circle.svg')] after:bg-[length:250%] after:bg-[position:center_158px] after:bg-no-repeat after:opacity-75 after:content-[''] md:col-span-4 md:h-[660px]">
-            <div className="relative z-10 p-9">
+            <div className="relative z-10 p-6">
               <h3 className="card-title">
                 {t("Ready in days and improving every day")}
               </h3>
@@ -148,7 +148,7 @@ export function BenefitsSection() {
                   src="/images/rendimiento.svg"
                   alt="Growth analytics chart"
                   fill
-                  className="object-contain object-center scale-[1.3]"
+                  className="scale-[1.3] object-contain object-center"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
