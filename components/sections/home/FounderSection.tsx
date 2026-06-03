@@ -14,9 +14,9 @@ export function FounderSection() {
     >
       <div className="absolute bottom-0 left-0 hidden h-[420px] w-full bg-gradient-to-r from-brand-cream-warm to-brand-gold-vivid opacity-30 [clip-path:polygon(0_0,100%_65%,100%_100%,0_100%)] lg:block" />
 
-      <div className="relative z-10 mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-8 py-20 md:min-h-[900px] lg:grid-cols-[1fr_480px] lg:px-20 lg:py-28">
+      <div className="relative z-10 mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-6 py-20 md:min-h-[900px] lg:grid-cols-[1fr_480px] lg:px-20 lg:py-28">
         <div className="max-w-[630px]">
-          <h2 className="relative inline-flex flex-row items-start text-2xl font-bold leading-tight tracking-[-0.03em] text-brand-black lg:text-5xl">
+          <h2 className="relative inline-flex flex-row items-start text-3xl font-bold leading-tight tracking-[-0.03em] text-brand-black lg:text-5xl">
             {t("Made with love")}
             <span className="ml-3 mt-1 inline-block h-9 w-9 animate-pulse bg-[url('/images/heart-svg.svg')] bg-contain bg-center bg-no-repeat md:h-10 md:w-10" />
           </h2>

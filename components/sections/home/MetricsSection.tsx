@@ -118,13 +118,13 @@ export function MetricsSection() {
     >
       <div className="absolute inset-0 bg-[url('/images/bg-graphic-stats-mobile.png')] bg-cover bg-bottom bg-no-repeat md:bg-[url('/images/bg-graphic-stats-desktop.png')]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[700px] max-w-7xl flex-col justify-center px-8 py-20 md:min-h-[760px] md:px-20 lg:py-28">
+      <div className="relative z-10 mx-auto flex min-h-[700px] max-w-7xl flex-col justify-center px-6 py-20 sm:px-5 md:min-h-[760px] md:px-20 lg:py-28">
         <div className="max-w-[720px]">
           <p className="text-[48px] font-semibold leading-[58px] text-brand-black md:text-[128px] md:leading-[155px]">
             <CountUp end={2000000} duration={1100} />
           </p>
 
-          <p className="mt-2 max-w-[520px] text-base font-normal leading-5 text-neutral-500 md:text-[28px] md:leading-[35px]">
+          <p className="mt-2 max-w-[520px] text-[20px] font-normal leading-6 text-neutral-500 md:text-[28px] md:leading-[35px]">
             {t("patient interactions managed by Kora")}
           </p>
         </div>

@@ -53,7 +53,7 @@ export function RevolutionSection() {
             {t("The healthcare revolution in Latam")}
             <span className="absolute -bottom-2 left-[60px] hidden h-[10px] w-[240px] bg-[url('/images/gold-underline.svg')] bg-contain bg-no-repeat md:block" />
           </h2>
-          <p className="mt-4 text-[24px] leading-tight tracking-[-0.03em] text-neutral-500 md:text-[28px]">
+          <p className="mt-4 text-lg leading-relaxed tracking-[-0.01em] text-neutral-500 lg:text-[22px]">
             {t("Told by its true protagonists")}
           </p>
         </div>
@@ -97,7 +97,7 @@ export function RevolutionSection() {
                       : "opacity-0 transition-opacity duration-200"
                   }`}
                 >
-                  <p className="max-w-[520px] text-[18px] italic leading-[1.35]">
+                  <p className="max-w-[520px] text-[16px] italic leading-[1.35]">
                     &ldquo;{item.quote}&rdquo;
                   </p>
 

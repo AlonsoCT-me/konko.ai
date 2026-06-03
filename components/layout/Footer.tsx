@@ -28,7 +28,7 @@ export function Footer() {
 
       <div className="relative z-10 mx-auto flex min-h-[900px] max-w-7xl flex-col justify-between px-8 py-20 lg:px-20 lg:py-24">
         <section>
-          <h2 className="max-w-[1080px] text-[40px] font-normal leading-[56px] md:text-[96px] md:leading-[96px]">
+          <h2 className="max-w-[1080px] text-[40px] font-medium leading-tight md:text-[96px] md:leading-[96px]">
             <span className="text-brand-gold">{t("Building the future")}</span>
             <br />
             <span className="text-brand-white">

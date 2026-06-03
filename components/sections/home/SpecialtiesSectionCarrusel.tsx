@@ -85,7 +85,7 @@ export function SpecialtiesSection() {
             <span className="gold-underline">{t("specialty")}</span>
           </h2>
 
-          <p className="mt-4 max-w-[760px] text-[28px] font-normal leading-[34px] text-neutral-600">
+          <p className="mt-4 max-w-[760px] text-lg leading-relaxed tracking-[-0.01em] lg:text-[22px] font-normal text-neutral-500">
             {t(
               "Kora adapts and understands the processes and complexities of each type of clinic",
             )}

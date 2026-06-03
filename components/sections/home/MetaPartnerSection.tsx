@@ -12,7 +12,7 @@ export function MetaPartnerSection() {
       data-navbar-theme="light"
       className="w-full border-y border-brand-border bg-white"
     >
-      <div className="mx-auto flex min-h-[525px] max-w-7xl flex-col justify-center gap-14 px-8 py-16 md:min-h-[450px] md:flex-row md:items-center md:gap-20 md:px-20 md:py-20">
+      <div className="mx-auto flex min-h-[525px] max-w-7xl flex-col justify-center gap-5 px-8 py-16 md:min-h-[450px] md:flex-row md:items-center md:gap-20 md:px-20 md:py-20">
         <div className="shrink-0">
           <Image
             src="/images/metab2b.png"
@@ -37,7 +37,7 @@ export function MetaPartnerSection() {
             )}
           </h2>
 
-          <p className="mt-5 max-w-[900px] text-[20px] font-normal leading-6 text-neutral-600 md:text-[22px] md:leading-[1.4]">
+          <p className="mt-5 max-w-[900px] text-lg font-normal leading-relaxed tracking-[-0.01em] text-neutral-500 lg:text-[22px]">
             {t(
               "We use the official WhatsApp Business API infrastructure to guarantee speed, stability, and a reliable experience for every patient.",
             )}

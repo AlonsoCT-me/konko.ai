@@ -57,7 +57,7 @@ export function SecuritySection() {
               {t("Security in every conversation")}
             </h2>
 
-            <p className="mt-5 max-w-[700px] text-[20px] font-normal leading-6 text-brand-white md:text-[28px] md:leading-[34px]">
+            <p className="mt-5 max-w-[700px] text-lg font-normal leading-relaxed tracking-[-0.01em] text-brand-white lg:text-[22px]">
               {t(
                 "Your patients' information is protected with the highest security standards",
               )}

@@ -19,7 +19,7 @@ export function TalkToKoraSection() {
               {t("Talk to Kora!")}
             </h2>
 
-            <p className="mt-4 max-w-[560px] text-2xl font-normal leading-[30px] text-neutral-600 md:text-[28px] md:leading-[34px]">
+            <p className="mt-4 max-w-[560px] text-lg font-normal leading-relaxed tracking-[-0.01em] text-neutral-600 lg:text-[22px]">
               {t("Experience firsthand what you can offer your patients")}
             </p>
 
