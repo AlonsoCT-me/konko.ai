@@ -236,7 +236,7 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="absolute inset-x-0 top-[72px] z-[60] flex h-[calc(100dvh-72px)] flex-col overflow-hidden bg-white/10 text-[#464D59] backdrop-blur-xl lg:hidden">
+        <div className="absolute inset-x-0 top-[72px] z-[60] flex h-[calc(100dvh-72px)] flex-col overflow-hidden bg-white/100 text-[#464D59] backdrop-blur-xl lg:hidden">
           <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-8 pb-8 pt-14">
             <nav className="flex flex-col gap-7">
               {navLinks.map((link) => (
