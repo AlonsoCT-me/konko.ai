@@ -42,7 +42,7 @@ export function SecuritySection() {
   const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
 
   return (
-    <section id="seguridad" className="w-full overflow-hidden">
+    <section id="seguridad" data-navbar-theme="dark" className="w-full overflow-hidden">
       <div className="relative w-full overflow-hidden bg-brand-black">
         <div className="absolute inset-0 bg-[url('/images/bg-gold-pattern.png')] bg-cover bg-center brightness-[0.30] contrast-125 grayscale" />
         <div className="absolute inset-0 bg-brand-black/40" />

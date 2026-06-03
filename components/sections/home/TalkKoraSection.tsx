@@ -8,7 +8,7 @@ export function TalkToKoraSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full bg-white py-10 md:py-16">
+    <section data-navbar-theme="light" className="w-full bg-white py-10 md:py-16">
       <div className="w-full bg-[url('/images/gold-bg-section.jpg')] bg-cover bg-center">
         <div className="mx-auto flex min-h-[360px] max-w-7xl items-center px-6 py-12 md:min-h-[400px] md:px-10 lg:px-20">
           <div className="max-w-[620px]">

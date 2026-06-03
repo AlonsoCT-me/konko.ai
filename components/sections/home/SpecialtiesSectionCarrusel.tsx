@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 import { Carousel } from '@/components/shared/Carousel';
 
@@ -68,7 +68,7 @@ function SpecialtyCard({
 
 export function SpecialtiesSection() {
   const { t } = useTranslation();
-  const [carouselsPaused, setCarouselsPaused] = useState(false);
+  const [paused, setPaused] = useState(false);
 
   const firstRow = specialties.slice(0, 10);
   const secondRow = specialties.slice(10);
@@ -76,6 +76,7 @@ export function SpecialtiesSection() {
   return (
     <section
       id="especialidades"
+      data-navbar-theme="light"
       className="w-full overflow-hidden bg-white py-20 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
@@ -93,16 +94,19 @@ export function SpecialtiesSection() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div
+        className="flex flex-col gap-2"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <Carousel
           items={firstRow.map(({ key, image, href }) => (
             <SpecialtyCard key={key} name={t(key)} image={image} href={href} />
           ))}
           gap={13}
           speed={40}
-          sharedPaused={carouselsPaused}
-          onSharedPauseChange={setCarouselsPaused}
-          pauseGroupOnHover
+          pauseOnHover={false}
+          isPaused={paused}
         />
 
         <Carousel
@@ -111,9 +115,8 @@ export function SpecialtiesSection() {
           ))}
           gap={13}
           speed={40}
-          sharedPaused={carouselsPaused}
-          onSharedPauseChange={setCarouselsPaused}
-          pauseGroupOnHover
+          pauseOnHover={false}
+          isPaused={paused}
         />
       </div>
     </section>

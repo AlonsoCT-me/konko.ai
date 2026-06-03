@@ -17,7 +17,7 @@ export function Logo({ className, variant = "dark" }: LogoProps) {
         height={40}
         priority
         className={cn(
-          "h-8 w-auto transition-all duration-300",
+          "h-8 w-auto transition-[opacity,transform] duration-300",
           variant === "light" && "brightness-0 invert",
         )}
       />

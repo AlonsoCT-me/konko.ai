@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Carousel } from "@/components/shared/Carousel";
@@ -25,8 +26,27 @@ const logos: LogoItem[] = [
 ];
 
 function LogoItem({ logo }: { logo: LogoItem }) {
-  const img = (
-    <div className="flex items-center justify-center [filter:grayscale(100%)_brightness(1.1)] [opacity:0.55] [transition:filter_0.25s_ease,opacity_0.25s_ease,transform_0.25s_ease] group-hover:[filter:grayscale(100%)_brightness(0.2)] group-hover:opacity-100 group-hover:scale-[1.08]">
+  const [active, setActive] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
+
+  function handleMouseEnter() { setActive(true); }
+  function handleMouseLeave() { setActive(false); }
+  function handleTouchStart() {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setActive(true);
+    timerRef.current = setTimeout(() => setActive(false), 3000);
+  }
+
+  const activeStyle = { filter: "grayscale(100%) brightness(0.2)", opacity: 1, transform: "scale(1.08)" };
+  const defaultStyle = { filter: "grayscale(100%) brightness(1.1)", opacity: 0.55, transform: "scale(1)" };
+
+  const inner = (
+    <div
+      style={active ? activeStyle : defaultStyle}
+      className="flex items-center justify-center [transition:filter_0.25s_ease,opacity_0.25s_ease,transform_0.25s_ease]"
+    >
       <Image
         src={logo.src}
         alt={logo.alt}
@@ -37,20 +57,21 @@ function LogoItem({ logo }: { logo: LogoItem }) {
     </div>
   );
 
+  const wrapperProps = {
+    onMouseEnter: handleMouseEnter,
+    onMouseLeave: handleMouseLeave,
+    onTouchStart: handleTouchStart,
+  };
+
   if (logo.href) {
     return (
-      <Link
-        href={logo.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group outline-none focus-visible:[&>div]:[filter:grayscale(100%)_brightness(0.2)] focus-visible:[&>div]:opacity-100 focus-visible:[&>div]:scale-[1.08]"
-      >
-        {img}
+      <Link href={logo.href} target="_blank" rel="noopener noreferrer" className="outline-none" {...wrapperProps}>
+        {inner}
       </Link>
     );
   }
 
-  return <div className="group">{img}</div>;
+  return <div {...wrapperProps}>{inner}</div>;
 }
 
 export function LogosCarousel() {
@@ -59,7 +80,7 @@ export function LogosCarousel() {
   const items = logos.map((logo) => <LogoItem key={logo.src} logo={logo} />);
 
   return (
-    <section className="overflow-hidden border-y border-neutral-100 bg-[#F8F9FB] py-10">
+    <section data-navbar-theme="light" className="overflow-hidden border-y border-neutral-100 bg-[#F8F9FB] py-10">
       <div className="mx-auto mb-8 max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-medium text-neutral-400">
           {t("Hundreds of clinics already trust us")}

@@ -112,7 +112,7 @@ export function MetricsSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative w-full overflow-hidden bg-white">
+    <section data-navbar-theme="light" className="relative w-full overflow-hidden bg-white">
       <div className="absolute inset-0 bg-[url('/images/bg-graphic-stats-mobile.png')] bg-cover bg-bottom bg-no-repeat md:bg-[url('/images/bg-graphic-stats-desktop.png')]" />
 
       <div className="relative z-10 mx-auto flex min-h-[700px] max-w-7xl flex-col justify-center px-8 py-20 md:min-h-[760px] md:px-20 lg:py-28">
@@ -128,8 +128,8 @@ export function MetricsSection() {
 
         <div className="mb-10 mt-10 grid max-w-[620px] grid-cols-1 gap-y-10 md:mb-24 md:mt-24 md:grid-cols-2 md:gap-x-20 md:gap-y-8">
           {stats.map((stat, index) => (
-            <div key={stat.label} className="flex items-center md:gap-8">
-              <span className="bg-brand-granade h-12 w-[3px] shrink-0" />
+            <div key={stat.label} className="flex items-start gap-8">
+              <span className="bg-brand-burgundy h-12 w-[3px] shrink-0" />
 
               <div>
                 <p className="text-[40px] font-medium leading-[48px] text-brand-black">
