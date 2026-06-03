@@ -46,12 +46,12 @@ export function RevolutionSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 lg:mb-12">
-          <h2 className="relative inline-block max-w-[780px] text-[46px] font-bold leading-[1.05] tracking-[-0.04em] text-neutral-950 md:text-[48px] lg:text-[48px]">
+          <h2 className="relative inline-block max-w-[780px] text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-neutral-950 md:text-[48px] lg:text-[48px]">
             {t("The healthcare revolution in Latam")}
             <span className="absolute -bottom-2 left-[60px] hidden h-[10px] w-[240px] bg-[url('/images/gold-underline.svg')] bg-contain bg-no-repeat md:block" />
           </h2>
 
-          <p className="mt-4 text-[30px] leading-tight tracking-[-0.03em] text-neutral-500 md:text-[28px]">
+          <p className="mt-4 text-[24px] leading-tight tracking-[-0.03em] text-neutral-500 md:text-[28px]">
             {t("Told by its true protagonists")}
           </p>
         </div>
@@ -79,7 +79,10 @@ export function RevolutionSection() {
                   alt={item.name}
                   fill
                   className={`object-cover transition-transform duration-700 ${isActive ? "scale-105" : "scale-100"}`}
-                  style={{ objectPosition: "objectPosition" in item ? item.objectPosition : "center" }}
+                  style={{
+                    objectPosition:
+                      "objectPosition" in item ? item.objectPosition : "center",
+                  }}
                   sizes="(max-width: 1024px) 100vw, 60vw"
                 />
 
@@ -88,7 +91,7 @@ export function RevolutionSection() {
                 <div
                   className={`absolute inset-x-0 bottom-0 z-10 p-7 text-white ${
                     isActive || !hasMultipleTestimonials
-                      ? "opacity-100 transition-opacity duration-500 delay-200"
+                      ? "opacity-100 transition-opacity delay-200 duration-500"
                       : "opacity-0 transition-opacity duration-200"
                   }`}
                 >
@@ -108,7 +111,9 @@ export function RevolutionSection() {
                       width={"logoSize" in item ? item.logoSize : 120}
                       height={"logoSize" in item ? item.logoSize : 48}
                       className="h-auto object-contain"
-                      style={{ maxWidth: "logoSize" in item ? item.logoSize : 120 }}
+                      style={{
+                        maxWidth: "logoSize" in item ? item.logoSize : 120,
+                      }}
                     />
                   </div>
 
@@ -129,38 +134,34 @@ export function RevolutionSection() {
           })}
         </div>
 
-        {/* Mobile touch slider */}
-        <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">
+        {/* Mobile stacked cards */}
+        <div className="flex flex-col gap-6 lg:hidden">
           {testimonials.map((item) => (
             <article
               key={item.name}
-              className={`relative h-[835px] snap-start overflow-hidden rounded-[20px] ${
-                testimonials.length === 1
-                  ? "min-w-full"
-                  : "min-w-[86%] sm:min-w-[70%]"
-              } `}
+              className="relative min-h-[640px] overflow-hidden rounded-[20px]"
             >
               <Image
                 src={item.image}
                 alt={item.name}
                 fill
                 className="object-cover"
-                sizes={
-                  testimonials.length === 1
-                    ? "100vw"
-                    : "(max-width: 768px) 86vw, 70vw"
-                }
+                sizes="100vw"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 z-10 p-8 text-white">
-                <p className="text-[26px] leading-[1.28]">"{item.quote}"</p>
+              <div className="absolute inset-x-0 bottom-0 z-10 p-5 text-white">
+                <p className="text-[18px] font-light leading-[1.2]">
+                  “{item.quote}”
+                </p>
 
-                <div className="mt-10 flex items-end justify-between gap-5">
+                <div className="mt-6 flex flex-col gap-1">
                   <div>
-                    <p className="text-[22px] font-bold">{item.name}</p>
-                    <p className="text-[20px] leading-snug text-white/90">
+                    <p className="text-[18px] font-bold leading-4">
+                      {item.name}
+                    </p>
+                    <p className="mt-1 text-[14px] leading-snug text-white/90">
                       {item.role}
                     </p>
                   </div>
@@ -170,11 +171,11 @@ export function RevolutionSection() {
                     alt=""
                     width={150}
                     height={52}
-                    className="h-auto max-w-[140px] object-contain"
+                    className="mt-2 h-auto max-w-[100px] object-contain"
                   />
                 </div>
 
-                <button className="mt-8 inline-flex items-center gap-3 text-base font-medium">
+                <button className="mb-4 mt-8 inline-flex items-center gap-3 text-base font-medium">
                   {t("Know story")}
                   <ArrowRight className="h-5 w-5" />
                 </button>
