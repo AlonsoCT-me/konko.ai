@@ -14,19 +14,29 @@ function NavbarButton({
   href,
   children,
   variant = "primary",
+  navTheme = "dark",
+  scrolled = false,
+  className,
 }: {
   href: string;
   children: React.ReactNode;
   variant?: "primary" | "secondary";
+  navTheme?: "dark" | "light";
+  scrolled?: boolean;
+  className?: string;
 }) {
   return (
     <Link
       href={href}
       className={cn(
-        "inline-flex h-11 items-center rounded-full px-4 text-sm font-medium leading-5 transition-transform hover:scale-[1.02]",
+        "inline-flex h-11 items-center rounded-full px-4 text-sm font-medium leading-5 transition-all duration-300 hover:scale-[1.02]",
         variant === "primary"
           ? "border border-brand-gold bg-brand-black text-brand-white"
-          : "border border-neutral-100 bg-neutral-100 text-brand-black",
+          : cn(
+              navTheme === "dark" ? "text-white" : "text-brand-black",
+              !scrolled && "hover:bg-white/10",
+            ),
+        className,
       )}
     >
       {children}
@@ -38,6 +48,10 @@ export function Navbar() {
   const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [navTheme, setNavTheme] = useState<"dark" | "light">("dark");
+  const [showGlass, setShowGlass] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isHero, setIsHero] = useState(true);
 
   const navLinks = NAV_LINKS.map((link) => ({
     ...link,
@@ -53,6 +67,39 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
+    const mq = window.matchMedia("(max-width: 1023px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("[data-navbar-theme], [data-navbar-glass], [data-navbar-hero]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const glass = entry.target.getAttribute("data-navbar-glass");
+          if (glass !== null) {
+            setShowGlass(entry.isIntersecting ? glass !== "none" : true);
+          }
+          const hero = entry.target.getAttribute("data-navbar-hero");
+          if (hero !== null) {
+            setIsHero(entry.isIntersecting);
+          }
+          if (entry.isIntersecting) {
+            const theme = entry.target.getAttribute("data-navbar-theme");
+            if (theme) setNavTheme(theme as "dark" | "light");
+          }
+        });
+      },
+      { rootMargin: "-72px 0px -90% 0px" },
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
 
     return () => {
@@ -60,10 +107,12 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
+  const isDark = navTheme === "dark";
+
   return (
     <header
       className={cn(
-        "fixed left-0 right-0 top-0 z-50 border-b border-brand-border transition-all duration-300 lg:border-b-0 lg:border-transparent",
+        "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
         mobileOpen
           ? "bg-white/80 backdrop-blur-xl"
           : scrolled
@@ -72,26 +121,41 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
-        <nav className="flex h-[72px] items-center justify-between transition-all duration-300 lg:my-4 lg:h-[68px] lg:rounded-[20px] lg:bg-neutral-100/50 lg:px-5 lg:backdrop-blur-md">
-          <div className="flex items-center gap-14 lg:gap-16">
+        <nav
+          className={cn(
+            "flex h-[72px] items-center justify-between transition-all duration-500 lg:my-4 lg:h-[68px] lg:px-5",
+            scrolled && showGlass
+              ? isDark
+                ? "lg:rounded-[20px] lg:bg-white/10 lg:backdrop-blur-xl lg:border lg:border-white/10"
+                : "lg:rounded-[20px] lg:bg-white/70 lg:backdrop-blur-xl lg:border lg:border-white/20"
+              : "lg:rounded-[20px] lg:bg-transparent lg:border lg:border-transparent",
+          )}
+        >
+          <div className="flex items-center gap-6">
             <Link
               href="/"
               aria-label={t("Konko.ai - Home")}
               onClick={() => setMobileOpen(false)}
-              className="shrink-0"
+              className="shrink-0 pr-2.5"
             >
               <Logo
-                variant={!scrolled && !mobileOpen ? "light" : "dark"}
+                variant={isDark && !mobileOpen && !(isMobile && scrolled && isHero) ? "light" : "dark"}
                 className="h-9 w-auto transition-all duration-300"
               />
             </Link>
 
-            <ul className="hidden items-center gap-10 lg:flex">
+            <ul className="hidden items-center gap-6 lg:flex">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-medium leading-4 text-[#464D59] transition-colors hover:text-brand-black"
+                    className={cn(
+                      "inline-flex h-11 items-center px-2.5 text-sm font-medium leading-4 transition-all duration-300",
+                      isDark
+                        ? "text-white/90 hover:text-white"
+                        : "text-[#464D59] hover:text-brand-black",
+                      !scrolled && "rounded-full hover:bg-white/10",
+                    )}
                   >
                     {link.label}
                   </Link>
@@ -100,23 +164,33 @@ export function Navbar() {
             </ul>
           </div>
 
-          <div className="hidden items-center gap-2.5 lg:flex">
-            <div className="flex h-11 items-center rounded-full bg-white px-4 text-base font-medium text-brand-black">
+          <div className="hidden items-center gap-2 lg:flex">
+            <div
+              className={cn(
+                "flex h-11 items-center rounded-full px-4 text-base font-medium transition-all duration-300",
+                isDark ? "text-white" : "text-brand-black",
+              )}
+            >
               <LanguageSwitcher variant="desktop" />
             </div>
 
-            <NavbarButton href={WHATSAPP_URL} variant="secondary">
+            <NavbarButton
+              href={WHATSAPP_URL}
+              variant="secondary"
+              navTheme={navTheme}
+              scrolled={scrolled}
+            >
               {t("Try Kora")}
             </NavbarButton>
 
-            <NavbarButton href={DEMO_URL}>{t("Schedule Demo")}</NavbarButton>
+            <NavbarButton href={DEMO_URL} className="ml-3">{t("Schedule Demo")}</NavbarButton>
           </div>
 
           <button
             type="button"
             className={cn(
               "relative z-[80] flex size-10 items-center justify-center transition-colors duration-300 lg:hidden",
-              !scrolled && !mobileOpen ? "text-white" : "text-brand-black",
+              isDark && !mobileOpen && !(scrolled && isHero) ? "text-white" : "text-brand-black",
             )}
             onClick={() => setMobileOpen((value) => !value)}
             aria-label={mobileOpen ? t("Close menu") : t("Open menu")}

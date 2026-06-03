@@ -9,6 +9,7 @@ export function FounderSection() {
   return (
     <section
       id="nosotros"
+      data-navbar-theme="light"
       className="relative w-full overflow-hidden border-y border-brand-border bg-white"
     >
       <div className="absolute bottom-0 left-0 hidden h-[420px] w-full bg-gradient-to-r from-brand-cream-warm to-brand-gold-vivid opacity-30 [clip-path:polygon(0_0,100%_65%,100%_100%,0_100%)] lg:block" />

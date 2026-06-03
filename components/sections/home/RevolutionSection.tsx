@@ -41,7 +41,7 @@ export function RevolutionSection() {
   const hasMultipleTestimonials = testimonials.length > 1;
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 lg:py-28">
+    <section data-navbar-theme="light" className="relative overflow-hidden bg-white py-20 lg:py-28">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#DED9C8_1.2px,transparent_1.2px)] opacity-70 [background-size:28px_28px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

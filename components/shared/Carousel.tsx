@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -9,9 +9,11 @@ interface CarouselProps {
   speed?: number;
   gap?: number;
   pauseOnHover?: boolean;
+  isPaused?: boolean;
   reverse?: boolean;
   className?: string;
   fadeColor?: string;
+  tapPauseDuration?: number;
 }
 
 export function Carousel({
@@ -19,18 +21,30 @@ export function Carousel({
   speed = 30,
   gap = 64,
   pauseOnHover = true,
+  isPaused = false,
   reverse = false,
   className,
   fadeColor = "white",
+  tapPauseDuration = 3000,
 }: CarouselProps) {
   const [paused, setPaused] = useState(false);
+  const tapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const doubled = [...items, ...items];
+
+  useEffect(() => () => { if (tapTimerRef.current) clearTimeout(tapTimerRef.current); }, []);
+
+  function handleTouchStart() {
+    if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
+    setPaused(true);
+    tapTimerRef.current = setTimeout(() => setPaused(false), tapPauseDuration);
+  }
 
   return (
     <div
       className={cn("relative overflow-hidden", className)}
       onMouseEnter={() => pauseOnHover && setPaused(true)}
       onMouseLeave={() => pauseOnHover && setPaused(false)}
+      onTouchStart={handleTouchStart}
     >
       <div
         className={cn(
@@ -39,7 +53,7 @@ export function Carousel({
         )}
         style={{
           animationDuration: `${speed}s`,
-          animationPlayState: paused ? "paused" : "running",
+          animationPlayState: (paused || isPaused) ? "paused" : "running",
         }}
       >
         {doubled.map((item, i) => (

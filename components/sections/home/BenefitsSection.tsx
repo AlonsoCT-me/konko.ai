@@ -8,7 +8,7 @@ export function BenefitsSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-neutral py-20 lg:py-28">
+    <section data-navbar-theme="light" className="bg-neutral py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-5 md:grid-cols-12">
           {/* Card 1 */}
