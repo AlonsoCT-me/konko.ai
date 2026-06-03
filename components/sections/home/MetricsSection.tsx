@@ -112,24 +112,27 @@ export function MetricsSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative w-full overflow-hidden bg-white">
+    <section
+      data-navbar-theme="light"
+      className="relative w-full overflow-hidden bg-white"
+    >
       <div className="absolute inset-0 bg-[url('/images/bg-graphic-stats-mobile.png')] bg-cover bg-bottom bg-no-repeat md:bg-[url('/images/bg-graphic-stats-desktop.png')]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[700px] max-w-7xl flex-col justify-center px-8 py-20 md:min-h-[760px] md:px-20 lg:py-28">
+      <div className="relative z-10 mx-auto flex min-h-[700px] max-w-7xl flex-col justify-center px-6 py-20 sm:px-5 md:min-h-[760px] md:px-20 lg:py-28">
         <div className="max-w-[720px]">
           <p className="text-[48px] font-semibold leading-[58px] text-brand-black md:text-[128px] md:leading-[155px]">
             <CountUp end={2000000} duration={1100} />
           </p>
 
-          <p className="mt-2 max-w-[520px] text-base font-normal leading-5 text-neutral-500 md:text-[28px] md:leading-[35px]">
+          <p className="mt-2 max-w-[520px] text-[20px] font-normal leading-6 text-neutral-500 md:text-[28px] md:leading-[35px]">
             {t("patient interactions managed by Kora")}
           </p>
         </div>
 
-        <div className="mb-20 mt-20 grid max-w-[620px] grid-cols-1 gap-y-10 md:mb-24 md:mt-24 md:grid-cols-2 md:gap-x-20 md:gap-y-8">
+        <div className="mb-10 mt-6 grid max-w-[620px] grid-cols-1 gap-y-10 md:mb-24 md:mt-24 md:grid-cols-2 md:gap-x-20 md:gap-y-8">
           {stats.map((stat, index) => (
-            <div key={stat.label} className="flex items-center gap-8">
-              <span className="bg-brand-granade h-12 w-[3px] shrink-0" />
+            <div key={stat.label} className="flex items-start gap-4">
+              <span className="h-12 w-[3px] shrink-0 bg-brand-burgundy" />
 
               <div>
                 <p className="text-[40px] font-medium leading-[48px] text-brand-black">

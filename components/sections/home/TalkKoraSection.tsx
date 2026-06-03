@@ -8,15 +8,18 @@ export function TalkToKoraSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full bg-white py-10 md:py-16">
+    <section
+      data-navbar-theme="light"
+      className="w-full bg-white py-10 md:py-16"
+    >
       <div className="w-full bg-[url('/images/gold-bg-section.jpg')] bg-cover bg-center">
         <div className="mx-auto flex min-h-[360px] max-w-7xl items-center px-6 py-12 md:min-h-[400px] md:px-10 lg:px-20">
           <div className="max-w-[620px]">
-            <h2 className="text-4xl font-semibold leading-[46px] text-brand-black md:text-[48px] md:leading-[58px]">
+            <h2 className="text-4xl font-bold leading-tight tracking-[-0.03em] text-brand-black lg:text-5xl">
               {t("Talk to Kora!")}
             </h2>
 
-            <p className="mt-4 max-w-[560px] text-2xl font-normal leading-[30px] text-neutral-600 md:text-[28px] md:leading-[34px]">
+            <p className="mt-4 max-w-[560px] text-lg font-normal leading-relaxed tracking-[-0.01em] text-neutral-600 lg:text-[22px]">
               {t("Experience firsthand what you can offer your patients")}
             </p>
 

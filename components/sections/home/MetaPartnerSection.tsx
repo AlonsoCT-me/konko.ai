@@ -4,11 +4,15 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 export function MetaPartnerSection() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isES = i18n.language?.startsWith("es");
 
   return (
-    <section className="w-full border-y border-brand-border bg-white">
-      <div className="mx-auto flex min-h-[525px] max-w-7xl flex-col justify-center gap-14 px-8 py-16 md:min-h-[450px] md:flex-row md:items-center md:gap-20 md:px-20 md:py-20">
+    <section
+      data-navbar-theme="light"
+      className="w-full border-y border-brand-border bg-white"
+    >
+      <div className="mx-auto flex min-h-[525px] max-w-7xl flex-col justify-center gap-5 px-8 py-16 md:min-h-[450px] md:flex-row md:items-center md:gap-20 md:px-20 md:py-20">
         <div className="shrink-0">
           <Image
             src="/images/metab2b.png"
@@ -21,11 +25,19 @@ export function MetaPartnerSection() {
         </div>
 
         <div className="max-w-[860px]">
-          <h2 className="text-[32px] font-semibold leading-[39px] text-brand-black md:text-[48px] md:leading-[58px]">
-            {t("We are official Meta partners")}
+          <h2 className="text-4xl font-bold leading-tight tracking-[-0.03em] text-brand-black lg:text-5xl">
+            {isES ? (
+              <>
+                Somos partners
+                <br />
+                oficiales de Meta
+              </>
+            ) : (
+              t("We are official Meta partners")
+            )}
           </h2>
 
-          <p className="mt-5 max-w-[900px] text-[20px] font-normal leading-6 text-neutral-600 md:text-[28px] md:leading-[34px]">
+          <p className="mt-5 max-w-[900px] text-lg font-normal leading-relaxed tracking-[-0.01em] text-neutral-500 lg:text-[22px]">
             {t(
               "We use the official WhatsApp Business API infrastructure to guarantee speed, stability, and a reliable experience for every patient.",
             )}

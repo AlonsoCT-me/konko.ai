@@ -27,14 +27,18 @@ export function MeetKoraSection() {
   }
 
   return (
-    <section id="kora" className="bg-white py-10 lg:py-28">
+    <section
+      id="kora"
+      data-navbar-theme="light"
+      className="bg-white py-10 lg:py-28"
+    >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col items-start">
             <h2 className="text-4xl font-bold leading-tight text-neutral-950 lg:text-5xl">
               {t("Meet")} <span className="gold-underline">Kora</span>
             </h2>
-            <p className="mt-5 max-w-md text-lg leading-relaxed text-neutral-500">
+            <p className="mt-5 max-w-md text-lg leading-relaxed tracking-[-0.01em] text-neutral-500 lg:text-[22px]">
               {t(
                 "The new AI assistant that will help you transform your clinic with technology from the best in the world.",
               )}

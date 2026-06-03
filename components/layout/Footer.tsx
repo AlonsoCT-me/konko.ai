@@ -1,30 +1,34 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 import {
-  FOOTER_LINKS,
-  DEMO_URL,
-  WHATSAPP_URL,
   CTA_LABELS,
+  DEMO_URL,
+  FOOTER_LINKS,
+  WHATSAPP_URL,
 } from "@/constants/navigation";
 
 import { CtaButton } from "@/components/shared/buttons";
+import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 import { Logo } from "@/components/shared/Logo";
 
 export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="relative w-full overflow-hidden bg-brand-black text-brand-white">
+    <footer
+      data-navbar-theme="dark"
+      data-navbar-glass="none"
+      className="relative w-full overflow-hidden bg-brand-black text-brand-white"
+    >
       <div className="absolute inset-0 bg-[url('/images/bg-gold-pattern.png')] bg-cover bg-center brightness-[0.30] contrast-125 grayscale" />
       <div className="absolute inset-0 bg-brand-black/40" />
 
       <div className="relative z-10 mx-auto flex min-h-[900px] max-w-7xl flex-col justify-between px-8 py-20 lg:px-20 lg:py-24">
         <section>
-          <h2 className="max-w-[1080px] text-[40px] font-normal leading-[56px] md:text-[96px] md:leading-[96px]">
+          <h2 className="max-w-[1080px] text-[40px] font-medium leading-tight md:text-[96px] md:leading-[96px]">
             <span className="text-brand-gold">{t("Building the future")}</span>
             <br />
             <span className="text-brand-white">
@@ -56,19 +60,8 @@ export function Footer() {
             ))}
           </nav>
 
-          <div className="mt-20 flex items-center gap-3">
-            <Image
-              src="/images/world-lang.svg"
-              alt=""
-              width={20}
-              height={20}
-              className="size-5"
-              aria-hidden="true"
-            />
-
-            <span className="text-sm font-normal leading-4 text-brand-white">
-              {t("English")}
-            </span>
+          <div className="mt-20">
+            <LanguageSwitcher variant="footer" />
           </div>
 
           <p className="mt-6 max-w-[343px] text-sm font-normal leading-4 text-brand-white md:max-w-none">

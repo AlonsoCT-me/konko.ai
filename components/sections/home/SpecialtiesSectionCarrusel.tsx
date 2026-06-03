@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
@@ -66,6 +67,7 @@ function SpecialtyCard({
 
 export function SpecialtiesSection() {
   const { t } = useTranslation();
+  const [paused, setPaused] = useState(false);
 
   const firstRow = specialties.slice(0, 10);
   const secondRow = specialties.slice(10);
@@ -73,16 +75,17 @@ export function SpecialtiesSection() {
   return (
     <section
       id="especialidades"
-      className="w-full overflow-hidden bg-white py-20 lg:py-28"
+      data-navbar-theme="light"
+      className="w-full overflow-hidden bg-white py-20 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
         <div className="mb-14 max-w-[860px] lg:mb-20">
-          <h2 className="text-[44px] font-semibold leading-[52px] text-brand-black md:text-[48px] md:leading-[58px]">
+          <h2 className="text-4xl font-bold leading-tight tracking-[-0.03em] text-brand-black lg:text-5xl">
             {t("Designed for your")}{" "}
             <span className="gold-underline">{t("specialty")}</span>
           </h2>
 
-          <p className="mt-4 max-w-[760px] text-[28px] font-normal leading-[34px] text-neutral-600">
+          <p className="mt-4 max-w-[760px] text-lg leading-relaxed tracking-[-0.01em] lg:text-[22px] font-normal text-neutral-500">
             {t(
               "Kora adapts and understands the processes and complexities of each type of clinic",
             )}
@@ -90,13 +93,20 @@ export function SpecialtiesSection() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div
+        className="flex flex-col gap-2"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <Carousel
           items={firstRow.map(({ key, image, href }) => (
             <SpecialtyCard key={key} name={t(key)} image={image} href={href} />
           ))}
           gap={13}
           speed={40}
+          sharedPaused={paused}
+          onSharedPauseChange={setPaused}
+          pauseGroupOnHover
         />
 
         <Carousel
@@ -105,6 +115,9 @@ export function SpecialtiesSection() {
           ))}
           gap={13}
           speed={40}
+          sharedPaused={paused}
+          onSharedPauseChange={setPaused}
+          pauseGroupOnHover
         />
       </div>
     </section>
